@@ -43,6 +43,7 @@ func _process(_delta):
 
 
 func _shoot_ball():
+	$Shot.play()
 	GameState.reset_chain()
 	_ball.mode = RigidBody2D.MODE_RIGID
 	var angle = (_mouse_pos - get_global_transform().get_origin()).angle()
