@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Tienne.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/fonts/Tienne-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/New Piskel (1).png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
@@ -17,6 +18,10 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 495.829, 449.212 )
+texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
