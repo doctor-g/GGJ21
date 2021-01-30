@@ -8,6 +8,7 @@ onready var _EndGame := preload("res://src/EndGame.tscn")
 onready var _target := $Target
 onready var _target_animation_player := $TargetAnimationPlayer
 onready var _game_over := $GameOver
+onready var _level_clear := $LevelClear
 
 export var _bin_scores := [30,20,10]
 
@@ -17,6 +18,7 @@ func _ready():
 
 func _on_EndGame(bin):
 	GameState.add_points(_bin_scores[abs(bin)])
+	_level_clear.show()
 
 
 func _on_OffScreen_body_entered(body):
@@ -64,3 +66,6 @@ func _on_GameOver_dismissed():
 	get_tree().change_scene("res://src/Level.tscn")
 
 
+func _on_LevelClear_dismissed():
+	GameState.reset_chain()
+	get_tree().change_scene("res://src/Level.tscn")

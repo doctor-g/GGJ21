@@ -19,6 +19,10 @@ func reset():
 	_chain = 0
 
 
+func get_chain()->int:
+	return _chain
+
+
 func increase_chain()->void:
 	_chain += 1
 	emit_signal("chain_changed", _chain)

@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/LevelClear.gd" type="Script" id=1]
+
+[node name="LevelClear" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -39.5
+margin_top = -7.0
+margin_right = 39.5
+margin_bottom = 7.0
+text = "LEVEL CLEAR"
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -71.6086
+margin_top = 34.6223
+margin_right = 79.3914
+margin_bottom = 48.6223
+text = "Tap or Click to Continue"
