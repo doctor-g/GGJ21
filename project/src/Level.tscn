@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Shooter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/PegGenerator.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Target.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Level.gd" type="Script" id=4]
+[ext_resource path="res://src/HUD.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1, 2000 )
@@ -31,12 +32,9 @@ extents = Vector2( 600, 10 )
 [node name="Level" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.33484
-margin_top = -14.6832
-margin_right = 1.33484
-margin_bottom = -14.6832
 script = ExtResource( 4 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -44,12 +42,18 @@ __meta__ = {
 position = Vector2( 506, 0 )
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
 shape = SubResource( 1 )
 
 [node name="RightWall" type="StaticBody2D" parent="."]
 position = Vector2( 1000, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 shape = SubResource( 1 )
@@ -63,12 +67,16 @@ anims/TargetPingPong = SubResource( 2 )
 
 [node name="OffScreen" type="Area2D" parent="."]
 position = Vector2( 500, 812.728 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OffScreen"]
 shape = SubResource( 3 )
 
 [node name="PegGenerator" parent="." instance=ExtResource( 2 )]
-_max_pegs = 1
+
+[node name="HUD" parent="." instance=ExtResource( 5 )]
 [connection signal="body_entered" from="OffScreen" to="." method="_on_OffScreen_body_entered"]
 [connection signal="peg_destroyed" from="PegGenerator" to="." method="_on_Peg_destroyed"]
 [connection signal="pegs_ready" from="PegGenerator" to="." method="_on_PegGenerator_pegs_ready"]

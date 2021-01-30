@@ -15,6 +15,7 @@ func _ready():
 
 func _on_Peg_destroyed():
 	_pegs_remaining -= 1
+	GameState.score += 10
 	if _pegs_remaining <= 0:
 		# This is a lot of manual fiddling to transition from the regular
 		# play state into the one where you hope the ball falls into the 
@@ -27,6 +28,7 @@ func _on_Peg_destroyed():
 		call_deferred("add_child", endgame)
 		endgame.connect("endgame", self, "_on_EndGame", [], CONNECT_ONESHOT)
 
+
 func _on_EndGame(bin):
 	print('Completed the level in bin %d' % bin)
 
@@ -34,7 +36,11 @@ func _on_EndGame(bin):
 func _on_OffScreen_body_entered(body):
 	if body is Ball:
 		body.queue_free()
-		_shooter.arm()
+		GameState.lives -= 1
+		if GameState.lives > 0:
+			_shooter.arm()
+		else:
+			print("TODO: Handle Game Over")
 
 
 func _on_PegGenerator_pegs_ready(pegs):
