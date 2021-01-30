@@ -8,6 +8,7 @@ var lives : int setget _set_lives
 
 var _chain := 0 
 var _score := 0 
+var highscore := 0
 
 func _ready():
 	reset()
@@ -36,6 +37,8 @@ func reset_chain()->void:
 # Add the given number of points, which will be scaled by the current multiplier.
 func add_points(points:int)->void:
 	_score += int(points * (1.0 + (_chain-1) * .1))
+	if _score > highscore:
+		highscore = _score
 	emit_signal("score_changed", _score)
 
 
