@@ -9,6 +9,8 @@ onready var _target := $Target
 onready var _target_animation_player := $TargetAnimationPlayer
 onready var _game_over := $GameOver
 
+export var _bin_scores := [30,20,10]
+
 func _ready():
 	_shooter.arm()
 	
@@ -32,6 +34,7 @@ func _on_Peg_destroyed():
 
 func _on_EndGame(bin):
 	print('Completed the level in bin %d' % bin)
+	GameState.score += _bin_scores[abs(bin)]
 
 
 func _on_OffScreen_body_entered(body):
