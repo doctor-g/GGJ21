@@ -27,6 +27,7 @@ func _on_OffScreen_body_entered(body):
 		GameState.lives -= 1
 		if GameState.lives > 0:
 			_shooter.arm()
+			$TopWall.reset()
 		else:
 			_game_over.visible = true
 
