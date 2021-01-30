@@ -52,6 +52,8 @@ func _on_Peg_destroyed():
 		# This is a lot of manual fiddling to transition from the regular
 		# play state into the one where you hope the ball falls into the 
 		# best bin.
+		$Music.queue_free()
+		$WinMusic.play()
 		_target_animation_player.stop()
 		_target.queue_free()
 		_offscreen.queue_free()
