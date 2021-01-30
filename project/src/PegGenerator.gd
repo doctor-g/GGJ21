@@ -15,7 +15,9 @@ var _peg_patterns  := [
 	preload("res://src/PegPatterns/Square.tscn"),
 	preload("res://src/PegPatterns/RotatedSquare.tscn"),
 	preload("res://src/PegPatterns/HollowSquare.tscn"),
-	preload("res://src/PegPatterns/HollowCircle.tscn")
+	preload("res://src/PegPatterns/HollowCircle.tscn"),
+	preload("res://src/PegPatterns/Pyramid.tscn"),
+	preload("res://src/PegPatterns/ReversePyramid.tscn")
 ]
 
 
