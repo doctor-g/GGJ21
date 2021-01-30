@@ -3,7 +3,6 @@ extends Control
 var _pegs_remaining : int
 
 onready var _shooter := $Shooter
-onready var _pegs := $Pegs
 onready var _offscreen := $OffScreen
 onready var _EndGame := preload("res://src/EndGame.tscn")
 onready var _target := $Target
@@ -11,9 +10,7 @@ onready var _target_animation_player := $TargetAnimationPlayer
 
 func _ready():
 	_shooter.arm()
-	for peg in _pegs.get_children():
-		_pegs_remaining += 1
-		peg.connect("destroyed", self, "_on_Peg_destroyed", [], CONNECT_ONESHOT)
+	
 
 
 func _on_Peg_destroyed():
@@ -38,3 +35,7 @@ func _on_OffScreen_body_entered(body):
 	if body is Ball:
 		body.queue_free()
 		_shooter.arm()
+
+
+func _on_PegGenerator_pegs_ready(pegs):
+	_pegs_remaining = pegs
