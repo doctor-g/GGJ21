@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/LevelClear.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/Tienne-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
 
 [node name="LevelClear" type="Control"]
 anchor_right = 1.0
@@ -10,24 +15,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -39.5
-margin_top = -7.0
-margin_right = 39.5
-margin_bottom = 7.0
-text = "LEVEL CLEAR"
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 200.0
+margin_top = 200.0
+margin_right = -200.0
+margin_bottom = -200.0
+color = Color( 0.498039, 0.231373, 0.231373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label2" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -71.6086
-margin_top = 34.6223
-margin_right = 79.3914
-margin_bottom = 48.6223
+margin_left = -194.5
+margin_top = -46.0
+margin_right = 194.5
+margin_bottom = 46.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 389.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL CLEAR"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 389.0
+margin_bottom = 92.0
+custom_fonts/font = SubResource( 1 )
 text = "Tap or Click to Continue"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
