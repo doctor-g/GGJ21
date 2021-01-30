@@ -29,6 +29,9 @@ func _on_OffScreen_body_entered(body):
 			$TopWall.reset()
 		else:
 			_game_over.visible = true
+			$Music.queue_free()
+			$LossMusic.play()
+			
 
 
 func _on_PegGenerator_pegs_ready():
