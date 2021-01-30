@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/MainMenuScreen.gd" type="Script" id=1]
+
+[node name="MainMenuScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 441.235
+margin_top = 241.831
+margin_right = 568.235
+margin_bottom = 255.831
+text = "GAME TITLE IS HERE"
+
+[node name="AnimalGrid" type="GridContainer" parent="."]
+margin_left = 455.377
+margin_top = 391.737
+margin_right = 495.377
+margin_bottom = 431.737
+__meta__ = {
+"_edit_use_anchors_": false
+}

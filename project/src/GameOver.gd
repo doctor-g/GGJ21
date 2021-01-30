@@ -1,28 +1,33 @@
 extends Control
 
-signal dismissed
-
-var _score := 0
-
 func _ready():
-	$HighScore.text = ""
-	$YourScore.text = ""
-	$NewHigh.text = ""
-	GameState.connect("score_changed", self, "score_changed")
-
-func _process(_delta):
-	if visible:
-		if GameState.highscore == _score:
-			$NewHigh.text = "New High Score! "+str(GameState.highscore)
-		else:
-			$HighScore.text = "High Score: "+str(GameState.highscore)
-			$YourScore.text = "Your Score: "+str(_score)
+	$Background/HighScore.text = ""
+	$Background/YourScore.text = ""
+	$Background/NewHigh.text = ""
 
 
-func score_changed(score:int):
-	if score != null:
-		_score = score
+func show():
+	visible = true
+	
+	if GameState.highscore == GameState.get_score():
+		$Background/NewHigh.text = "New High Score! "+str(GameState.highscore)
+	else:
+		$Background/HighScore.text = "High Score: "+str(GameState.highscore)
+		$Background/YourScore.text = "Your Score: "+str(GameState.get_score())
+	
+	if GameState.new_unlock:
+		$Background/PopupButton.text = "Unlock Animal!"
 
 
 func _on_PlayAgainButton_pressed():
-	emit_signal("dismissed")
+	if GameState.new_unlock:
+		$Background.visible = false
+		GameState.unlock_level += 1
+		$NewAnimal.texture = AnimalSettings.ANIMALS[GameState.unlock_level].image
+		$NewAnimal.visible = true
+	else:
+		get_tree().change_scene("res://src/MainMenuScreen.tscn")
+
+
+func _on_PostUnlockButton_pressed():
+	get_tree().change_scene("res://src/MainMenuScreen.tscn")

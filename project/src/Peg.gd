@@ -44,16 +44,22 @@ func hit():
 		_tween.start()
 		
 	if health <= 0:
+		$CollisionShape2D.set_deferred("disabled", true)
 		GameState.increase_chain()
 		GameState.add_points(points_for_destroy)
 		
 		_tween.interpolate_property(_colored_part, "modulate", null, Color.white, 0.05)
 		_tween.start()
-		yield(get_tree().create_timer(0.05), "timeout")
-		emit_signal("destroyed")
-		_gradient.colors[1] = Color.blue
-		_spawn_particles(_hit_particles)
-		queue_free()
+		_tween.connect("tween_all_completed", self, "_on_modulate_complete")
+
+
+
+
+func _on_modulate_complete():
+	emit_signal("destroyed")
+	_gradient.colors[1] = Color.blue
+	_spawn_particles(_hit_particles)
+	queue_free()
 
 
 func _spawn_particles(particles:PackedScene):

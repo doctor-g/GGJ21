@@ -26,7 +26,7 @@ func _on_OffScreen_body_entered(body):
 			_shooter.arm()
 			$TopWall.reset()
 		else:
-			_game_over.visible = true
+			_game_over.show()
 			$Music.queue_free()
 			$LossMusic.play()
 			
@@ -62,11 +62,6 @@ func _on_Peg_destroyed():
 		endgame.position = Vector2(0,800)
 		call_deferred("add_child", endgame)
 		endgame.connect("endgame", self, "_on_EndGame", [], CONNECT_ONESHOT)
-
-
-func _on_GameOver_dismissed():
-	GameState.reset()
-	get_tree().change_scene("res://src/Level.tscn")
 
 
 func _on_LevelClear_dismissed():

@@ -135,7 +135,6 @@ stream = ExtResource( 15 )
 [connection signal="body_exited" from="TopWall/Area2D" to="TopWall" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="OffScreen" to="." method="_on_OffScreen_body_entered"]
 [connection signal="pegs_ready" from="PegGenerator" to="." method="_on_PegGenerator_pegs_ready"]
-[connection signal="dismissed" from="GameOver" to="." method="_on_GameOver_dismissed"]
 [connection signal="dismissed" from="LevelClear" to="." method="_on_LevelClear_dismissed"]
 [connection signal="finished" from="Music" to="Music" method="_on_Music_finished"]
 [connection signal="finished" from="LossMusic" to="LossMusic" method="_on_LossMusic_finished"]

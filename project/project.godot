@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "AnimalSettings",
+"language": "GDScript",
+"path": "res://src/AnimalSettings.gd"
+}, {
 "base": "RigidBody2D",
 "class": "Ball",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://src/Peg.gd"
 } ]
 _global_script_class_icons={
+"AnimalSettings": "",
 "Ball": "",
 "Peg": ""
 }
@@ -27,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GGJ21"
-run/main_scene="res://src/Level.tscn"
+run/main_scene="res://src/SplashScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
