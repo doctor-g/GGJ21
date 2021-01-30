@@ -23,6 +23,7 @@ func _on_EndGame(bin):
 
 func _on_OffScreen_body_entered(body):
 	if body is Ball:
+		$FallSound.play()
 		body.queue_free()
 		if GameState.lives > 0:
 			_shooter.arm()
