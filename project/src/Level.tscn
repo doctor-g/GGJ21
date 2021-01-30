@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Shooter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Peg.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Target.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Level.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1, 2000 )
@@ -24,9 +25,13 @@ tracks/0/keys = {
 "values": [ Vector2( 500, 765 ), Vector2( 90.4682, 765 ), Vector2( 913.512, 765 ), Vector2( 500, 765 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 600, 10 )
+
 [node name="Level" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -54,3 +59,10 @@ position = Vector2( 913.512, 765 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "TargetPingPong"
 anims/TargetPingPong = SubResource( 2 )
+
+[node name="OffScreen" type="Area2D" parent="."]
+position = Vector2( 500, 812.728 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OffScreen"]
+shape = SubResource( 3 )
+[connection signal="body_entered" from="OffScreen" to="." method="_on_OffScreen_body_entered"]

@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "Ball",
+"language": "GDScript",
+"path": "res://src/Ball.gd"
+}, {
 "base": "StaticBody2D",
 "class": "Peg",
 "language": "GDScript",
 "path": "res://src/Peg.gd"
 } ]
 _global_script_class_icons={
+"Ball": "",
 "Peg": ""
 }
 

@@ -1,6 +1,6 @@
 extends Node2D
 
-enum _State {IDLE, LOADED, AIMING}
+enum _State {IDLE, READY, LOADED, AIMING}
 
 const _Ball := preload("res://src/Ball.tscn")
 
@@ -12,9 +12,14 @@ var _ball : RigidBody2D
 var _mouse_pos : Vector2
 
 
+# Call to prepare this thing for launch
+func arm():
+	_state = _State.READY
+
+
 func _input(event:InputEvent):
 	if event is InputEventMouseButton:
-		if event.pressed and _state == _State.IDLE:
+		if event.pressed and _state == _State.READY:
 			_load_ball()
 		elif not event.pressed and _state == _State.AIMING:
 			_shoot_ball()
