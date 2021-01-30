@@ -1,11 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/frame.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/Tienne.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/fonts/Tienne-Black.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/fonts/Tienne-Regular.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]
+size = 10
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 4 )
 
@@ -21,16 +26,30 @@ __meta__ = {
 texture = ExtResource( 2 )
 centered = false
 
+[node name="ChainHeader" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 20.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "Chain"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ChainLabel" type="Label" parent="."]
 margin_left = 489.946
 margin_top = 25.4712
 margin_right = 510.946
 margin_bottom = 69.4712
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 1
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -40,6 +59,7 @@ margin_top = 8.98984
 margin_right = 231.861
 margin_bottom = 48.9898
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -70,6 +90,7 @@ margin_top = 8.98984
 margin_right = 838.76
 margin_bottom = 48.9898
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
