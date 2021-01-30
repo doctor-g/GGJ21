@@ -16,7 +16,6 @@ func _ready():
 
 
 func _on_EndGame(bin):
-	print('Completed the level in bin %d' % bin)
 	GameState.add_points(_bin_scores[abs(bin)])
 
 
