@@ -1,9 +1,13 @@
 class_name Peg
 extends StaticBody2D
 
+const _destroyed_particles := preload("res://src/DestroyedParticles.tscn")
+const _hit_particles := preload("res://src/HitParticles.tscn")
+
 signal destroyed()
 
 export var health := 1
+export var _gradient:Gradient
 
 onready var _colored_part := $PegBackground
 onready var _tween := $Tween
@@ -16,10 +20,12 @@ func _ready():
 func hit():
 	health -= 1
 	if health > 0:
+		var next_color:Color = _health_colors[health-1]
+		_gradient.colors[1] = _health_colors[health]
+		_spawn_particles(_hit_particles)
 		_tween.interpolate_property(_colored_part, "modulate", null, Color.white, 0.05)
 		_tween.start()
 		yield(get_tree().create_timer(0.05), "timeout")
-		var next_color:Color = _health_colors[health-1]
 		_tween.interpolate_property(_colored_part, "modulate", null, next_color, 0.05)
 		_tween.start()
 	if health <= 0:
@@ -27,8 +33,15 @@ func hit():
 		_tween.start()
 		yield(get_tree().create_timer(0.05), "timeout")
 		emit_signal("destroyed")
+		_spawn_particles(_destroyed_particles)
 		queue_free()
 
+func _spawn_particles(particles:PackedScene):
+	var _Particles := particles.instance()
+	_Particles.position = get_global_transform().origin
+	if health > 0:
+		_Particles.color_ramp = _gradient
+	get_tree().root.add_child(_Particles)
 
 func _draw():
 	draw_circle(Vector2.ZERO, 10, Color.green)
