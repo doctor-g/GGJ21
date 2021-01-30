@@ -7,6 +7,7 @@ const _Peg := preload("res://src/Peg.tscn")
 export var max_pegs := 20
 export var min_distance_between_pegs := 40.0
 export var upgraded_pegs := 5
+export var max_peg_health := 2
 
 var _peg_positions := []
 var _spawn_area_offset := Vector2.ZERO
@@ -43,8 +44,9 @@ func _generate_pegs():
 	while remaining_to_upgrade > 0:
 		var index := randi() % max_pegs
 		var peg := $Pegs.get_child(index)
-		peg.health += 1
-		remaining_to_upgrade -= 1
+		if peg.health < max_peg_health:
+			peg.health += 1
+			remaining_to_upgrade -= 1
 
 	emit_signal("pegs_ready")
 
