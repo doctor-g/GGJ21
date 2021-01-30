@@ -35,16 +35,14 @@ func _load_ball():
 
 func _process(_delta):
 	if _state == _State.AIMING:
+		$Sprite.show()
 		_mouse_pos = get_viewport().get_mouse_position()
-		update()
+		rotation = (get_global_transform().origin-_mouse_pos).angle()
+	else:
+		$Sprite.hide()
 
-func _draw():
-	if _state == _State.AIMING:
-		draw_line(Vector2.ZERO, _mouse_pos - get_global_transform().get_origin(), Color.black, 5)
-		
-	
+
 func _shoot_ball():
-	update() # Force redraw to eliminate drawn line
 	_ball.mode = RigidBody2D.MODE_RIGID
 	var angle = (_mouse_pos - get_global_transform().get_origin()).angle()
 	var impulse_vector := Vector2(_initial_impulse, 0).rotated(angle)
