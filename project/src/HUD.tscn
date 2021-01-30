@@ -1,12 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/frame.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/Tienne-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/fonts/Tienne-Black.ttf" type="DynamicFontData" id=4]
 
-[node name="HUD" type="GridContainer"]
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+font_data = ExtResource( 3 )
+
+[node name="HUD" type="Control"]
 anchor_right = 1.0
 margin_bottom = 14.0
-columns = 6
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -16,43 +25,79 @@ __meta__ = {
 texture = ExtResource( 2 )
 centered = false
 
-[node name="Label" type="Label" parent="."]
-margin_right = 163.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-text = "Score:"
-
-[node name="ScoreLabel" type="Label" parent="."]
-margin_left = 167.0
-margin_right = 330.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-text = "0"
-
-[node name="Label3" type="Label" parent="."]
-margin_left = 334.0
-margin_right = 497.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-text = "Chain"
-
 [node name="ChainLabel" type="Label" parent="."]
-margin_left = 501.0
-margin_right = 664.0
-margin_bottom = 14.0
+margin_left = 489.946
+margin_top = 25.4712
+margin_right = 510.946
+margin_bottom = 69.4712
 size_flags_horizontal = 3
+custom_fonts/font = SubResource( 2 )
 text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label2" type="Label" parent="."]
-margin_left = 668.0
-margin_right = 831.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-text = "Balls Remaining:"
+[node name="ScoreBox" type="HBoxContainer" parent="."]
+margin_left = 122.861
+margin_top = 8.98984
+margin_right = 231.861
+margin_bottom = 48.9898
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="BallsLabel" type="Label" parent="."]
-margin_left = 835.0
-margin_right = 998.0
-margin_bottom = 14.0
+[node name="Label" type="Label" parent="ScoreBox"]
+margin_top = 1.0
+margin_right = 95.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
-text = "0"
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Score: "
+
+[node name="ScoreLabel" type="Label" parent="ScoreBox"]
+margin_left = 99.0
+margin_top = 1.0
+margin_right = 184.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "00000"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LivesBox" type="HBoxContainer" parent="."]
+margin_left = 654.76
+margin_top = 8.98984
+margin_right = 838.76
+margin_bottom = 48.9898
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LivesBox"]
+margin_top = 1.0
+margin_right = 90.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Balls: "
+
+[node name="LivesLabel" type="Label" parent="LivesBox"]
+margin_left = 94.0
+margin_top = 1.0
+margin_right = 184.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "00"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

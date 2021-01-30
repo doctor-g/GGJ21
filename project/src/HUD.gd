@@ -1,7 +1,7 @@
-extends GridContainer
+extends Control
 
-onready var _score_label := $ScoreLabel
-onready var _lives_label := $BallsLabel
+onready var _score_label := $ScoreBox/ScoreLabel
+onready var _lives_label := $LivesBox/LivesLabel
 onready var _chain_label := $ChainLabel
 
 
