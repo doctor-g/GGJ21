@@ -24,6 +24,11 @@ config/name="GGJ21"
 run/main_scene="res://src/Level.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1000
+window/size/height=800
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
