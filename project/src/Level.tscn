@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/Shooter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/PegGenerator.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://src/GameOver.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/LevelClear.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/TopWall.gd" type="Script" id=9]
+[ext_resource path="res://src/Music.gd" type="Script" id=10]
+[ext_resource path="res://assets/music/pickup_notes.ogg" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 530.611, 10 )
@@ -111,8 +113,14 @@ visible = false
 
 [node name="LevelClear" parent="." instance=ExtResource( 8 )]
 visible = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
+script = ExtResource( 10 )
 [connection signal="body_exited" from="TopWall/Area2D" to="TopWall" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="OffScreen" to="." method="_on_OffScreen_body_entered"]
 [connection signal="pegs_ready" from="PegGenerator" to="." method="_on_PegGenerator_pegs_ready"]
 [connection signal="dismissed" from="GameOver" to="." method="_on_GameOver_dismissed"]
 [connection signal="dismissed" from="LevelClear" to="." method="_on_LevelClear_dismissed"]
+[connection signal="finished" from="Music" to="Music" method="_on_Music_finished"]
