@@ -38,7 +38,6 @@ func _generate_pegs():
 				var distance_between_pegs := pos.distance_to(other_pos)
 				if distance_between_pegs < _min_distance_between_pegs:
 					finding_pos = true
-					print("Too Close")
 		_peg_positions.append(pos)
 		var _Peg := _peg.instance()
 		if _upgraded_pegs > 0:
