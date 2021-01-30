@@ -5,7 +5,7 @@
 [node name="Particles" type="CPUParticles2D"]
 emitting = false
 amount = 15
-lifetime = 0.5
+lifetime = 0.4
 one_shot = true
 preprocess = 0.2
 explosiveness = 0.5

@@ -1,7 +1,6 @@
 class_name Peg
 extends StaticBody2D
 
-const _destroyed_particles := preload("res://src/DestroyedParticles.tscn")
 const _hit_particles := preload("res://src/HitParticles.tscn")
 
 signal destroyed()
@@ -52,13 +51,13 @@ func hit():
 		_tween.start()
 		yield(get_tree().create_timer(0.05), "timeout")
 		emit_signal("destroyed")
-		_spawn_particles(_destroyed_particles)
+		_gradient.colors[1] = Color.blue
+		_spawn_particles(_hit_particles)
 		queue_free()
 
 
 func _spawn_particles(particles:PackedScene):
 	var _Particles := particles.instance()
 	_Particles.position = get_global_transform().origin
-	if health > 0:
-		_Particles.color_ramp = _gradient
+	_Particles.color_ramp = _gradient
 	get_tree().root.add_child(_Particles)
