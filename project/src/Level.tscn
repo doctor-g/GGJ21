@@ -39,9 +39,6 @@ __meta__ = {
 [node name="Shooter" parent="." instance=ExtResource( 1 )]
 position = Vector2( 506, 0 )
 
-[node name="Peg" parent="." instance=ExtResource( 2 )]
-position = Vector2( 506, 388.432 )
-
 [node name="LeftWall" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
@@ -65,4 +62,9 @@ position = Vector2( 500, 812.728 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OffScreen"]
 shape = SubResource( 3 )
+
+[node name="Pegs" type="Node" parent="."]
+
+[node name="Peg" parent="Pegs" instance=ExtResource( 2 )]
+position = Vector2( 506, 388.432 )
 [connection signal="body_entered" from="OffScreen" to="." method="_on_OffScreen_body_entered"]

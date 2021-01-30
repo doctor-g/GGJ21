@@ -1,21 +1,15 @@
 class_name Peg
 extends StaticBody2D
 
-signal destroyed(level)
+signal destroyed()
 
 export var _health := 1
-
-var _level := 0
-
-func _ready():
-	_level = _health
 
 
 func hit():
 	_health -= 1
 	if _health <= 0:
-		emit_signal("destroyed", _level)
-		print("SQUISHED A PEG")
+		emit_signal("destroyed")
 		queue_free()
 
 
