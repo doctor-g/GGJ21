@@ -23,34 +23,35 @@ position = Vector2( 600, 0 )
 position = Vector2( 800, 0 )
 
 [node name="FarLeftArea" type="Area2D" parent="."]
+position = Vector2( 0, 7.49158 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FarLeftArea"]
 position = Vector2( 100, 20 )
 shape = SubResource( 1 )
 
 [node name="NearLeftArea" type="Area2D" parent="."]
-position = Vector2( 200, 0 )
+position = Vector2( 200, 7.49158 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NearLeftArea"]
 position = Vector2( 100, 20 )
 shape = SubResource( 1 )
 
 [node name="CenterArea" type="Area2D" parent="."]
-position = Vector2( 400, 0 )
+position = Vector2( 400, 7.49158 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CenterArea"]
 position = Vector2( 100, 20 )
 shape = SubResource( 1 )
 
 [node name="NearRightArea" type="Area2D" parent="."]
-position = Vector2( 600, 0 )
+position = Vector2( 600, 7.49158 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NearRightArea"]
 position = Vector2( 100, 20 )
 shape = SubResource( 1 )
 
 [node name="FarRightArea" type="Area2D" parent="."]
-position = Vector2( 800, 0 )
+position = Vector2( 800, 7.49158 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FarRightArea"]
 position = Vector2( 100, 20 )

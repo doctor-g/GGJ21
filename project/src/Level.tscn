@@ -72,10 +72,7 @@ autoplay = "TargetPingPong"
 anims/TargetPingPong = SubResource( 2 )
 
 [node name="OffScreen" type="Area2D" parent="."]
-position = Vector2( 500, 812.728 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( 500, 840 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OffScreen"]
 shape = SubResource( 3 )
