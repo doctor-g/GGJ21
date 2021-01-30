@@ -17,7 +17,6 @@ func _ready():
 	randomize()
 	var _spawn_area : Vector2 = $SpawnArea/CollisionShape2D.shape.extents*2
 	_spawn_area_offset = (get_viewport_rect().size-_spawn_area)/2
-	print(str(_spawn_area_offset))
 	_spawn_area_bounds = _spawn_area
 	_generate_pegs()
 
