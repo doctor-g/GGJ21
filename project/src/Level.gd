@@ -7,6 +7,7 @@ onready var _offscreen := $OffScreen
 onready var _EndGame := preload("res://src/EndGame.tscn")
 onready var _target := $Target
 onready var _target_animation_player := $TargetAnimationPlayer
+onready var _game_over := $GameOver
 
 func _ready():
 	_shooter.arm()
@@ -40,8 +41,13 @@ func _on_OffScreen_body_entered(body):
 		if GameState.lives > 0:
 			_shooter.arm()
 		else:
-			print("TODO: Handle Game Over")
+			_game_over.visible = true
 
 
 func _on_PegGenerator_pegs_ready(pegs):
 	_pegs_remaining = pegs
+
+
+func _on_GameOver_dismissed():
+	GameState.reset()
+	get_tree().change_scene("res://src/Level.tscn")
