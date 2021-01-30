@@ -27,22 +27,30 @@ func _ready():
 
 func _generate_pegs():
 	for _i in _max_pegs:
-		var finding_pos := true
+		var found_position := false
 		var pos:Vector2
-		while finding_pos:
-			finding_pos = false
+		while not found_position:
 			var pos_x := rand_range(_spawn_area_offset.x, _spawn_area_bounds.x)
 			var pos_y := rand_range(_spawn_area_offset.y, _spawn_area_bounds.y)
 			pos = Vector2(pos_x, pos_y)
-			for other_pos in _peg_positions:
-				var distance_between_pegs := pos.distance_to(other_pos)
-				if distance_between_pegs < _min_distance_between_pegs:
-					finding_pos = true
+			if not _is_within_min_distance_of_another_peg(pos):
+				found_position = true
+		
 		_peg_positions.append(pos)
-		var _Peg := _peg.instance()
+		
+		var peg := _peg.instance()
 		if _upgraded_pegs > 0:
 			_upgraded_pegs -= 1
-			_Peg.health = 3
-		_Peg.position = pos
-		$Pegs.add_child(_Peg)
+			peg.health = 3
+		peg.position = pos
+		$Pegs.add_child(peg)
+
 	emit_signal("pegs_ready")
+
+
+func _is_within_min_distance_of_another_peg(p:Vector2)->bool:
+	for peg in _peg_positions:
+		var distance_between_pegs := p.distance_to(peg)
+		if distance_between_pegs < _min_distance_between_pegs:
+			return true
+	return false
