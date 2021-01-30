@@ -3,16 +3,20 @@
 [ext_resource path="res://src/PegGenerator.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 400, 230 )
+extents = Vector2( 300, 200 )
 
 [node name="PegGenerator" type="Node2D"]
 position = Vector2( 1.18921, 0 )
 script = ExtResource( 1 )
 
 [node name="SpawnArea" type="Area2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea"]
-position = Vector2( 500, 431.954 )
+position = Vector2( 500, 400 )
 shape = SubResource( 1 )
 
 [node name="Pegs" type="Node2D" parent="."]

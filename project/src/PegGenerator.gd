@@ -5,7 +5,7 @@ signal pegs_ready
 const _Peg := preload("res://src/Peg.tscn")
 
 export var max_patterns := 3
-export var min_distance_between_patterns := 200
+export var min_distance_between_patterns := 300
 export var upgraded_pegs := 5
 export var max_peg_health := 2
 
@@ -26,8 +26,8 @@ func _ready():
 # warning-ignore:narrowing_conversion
 	var _spawn_area : Vector2 = $SpawnArea/CollisionShape2D.shape.extents*2
 	_spawn_area_offset = (get_viewport_rect().size-_spawn_area)/2
-	_spawn_area_bounds = _spawn_area
-	print(_spawn_area_bounds, " ", _spawn_area_offset)
+	_spawn_area_bounds = _spawn_area+_spawn_area_offset
+	print(_spawn_area_bounds)
 	_generate_pegs()
 
 
