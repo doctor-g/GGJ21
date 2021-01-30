@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Tienne.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/Tienne-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+outline_size = 1
+font_data = ExtResource( 3 )
 
 [node name="GameOver" type="Control"]
 anchor_right = 1.0
@@ -28,7 +34,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="."]
+[node name="HighScore" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -39,7 +45,39 @@ margin_right = 175.0
 margin_bottom = 50.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "High Score:  Your Score: "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewHigh" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -173.016
+margin_top = 30.1575
+margin_right = 176.984
+margin_bottom = 68.1575
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YourScore" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -175.397
+margin_top = 13.0929
+margin_right = 174.603
+margin_bottom = 51.0929
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
