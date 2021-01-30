@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/EndGameBarrier.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/EndGame.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 100, 10 )
+
+[node name="EndGame" type="Node2D"]
+position = Vector2( 0, 800 )
+script = ExtResource( 2 )
+
+[node name="EndGameBarrier" parent="." instance=ExtResource( 1 )]
+position = Vector2( 200, 0 )
+
+[node name="EndGameBarrier2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 400, 0 )
+
+[node name="EndGameBarrier3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 600, 0 )
+
+[node name="EndGameBarrier4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 800, 0 )
+
+[node name="FarLeftArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FarLeftArea"]
+position = Vector2( 100, 20 )
+shape = SubResource( 1 )
+
+[node name="NearLeftArea" type="Area2D" parent="."]
+position = Vector2( 200, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NearLeftArea"]
+position = Vector2( 100, 20 )
+shape = SubResource( 1 )
+
+[node name="CenterArea" type="Area2D" parent="."]
+position = Vector2( 400, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenterArea"]
+position = Vector2( 100, 20 )
+shape = SubResource( 1 )
+
+[node name="NearRightArea" type="Area2D" parent="."]
+position = Vector2( 600, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NearRightArea"]
+position = Vector2( 100, 20 )
+shape = SubResource( 1 )
+
+[node name="FarRightArea" type="Area2D" parent="."]
+position = Vector2( 800, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FarRightArea"]
+position = Vector2( 100, 20 )
+shape = SubResource( 1 )

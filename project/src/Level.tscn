@@ -51,9 +51,9 @@ position = Vector2( 1000, 0 )
 shape = SubResource( 1 )
 
 [node name="Target" parent="." instance=ExtResource( 3 )]
-position = Vector2( 913.512, 765 )
+position = Vector2( 501.99, 765 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="TargetAnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "TargetPingPong"
 anims/TargetPingPong = SubResource( 2 )
 
