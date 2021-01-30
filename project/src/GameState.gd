@@ -22,6 +22,11 @@ func reset():
 func increase_chain()->void:
 	_chain += 1
 	emit_signal("chain_changed", _chain)
+	
+
+func reset_chain()->void:
+	_chain = 0
+	emit_signal("chain_changed", _chain)
 
 
 # Add the given number of points, which will be scaled by the current multiplier.
@@ -37,6 +42,3 @@ func get_score()->int:
 func _set_lives(value):
 	lives = value
 	emit_signal("lives_changed", lives)
-	# Lives changed so also reset the chain
-	_chain = 0
-	emit_signal("chain_changed", _chain)
