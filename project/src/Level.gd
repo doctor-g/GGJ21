@@ -15,23 +15,6 @@ func _ready():
 	_shooter.arm()
 
 
-func _on_Peg_destroyed():
-	_pegs_remaining -= 1
-	GameState.increase_chain()
-	GameState.add_points(10)
-	if _pegs_remaining <= 0:
-		# This is a lot of manual fiddling to transition from the regular
-		# play state into the one where you hope the ball falls into the 
-		# best bin.
-		_target_animation_player.stop()
-		_target.queue_free()
-		_offscreen.queue_free()
-		var endgame : Node2D = _EndGame.instance()
-		endgame.position = Vector2(0,800)
-		call_deferred("add_child", endgame)
-		endgame.connect("endgame", self, "_on_EndGame", [], CONNECT_ONESHOT)
-
-
 func _on_EndGame(bin):
 	print('Completed the level in bin %d' % bin)
 	GameState.add_points(_bin_scores[abs(bin)])
@@ -62,6 +45,23 @@ func _watch_pegs(node):
 			_watch_pegs(child)
 
 
+func _on_Peg_destroyed():
+	_pegs_remaining -= 1
+	if _pegs_remaining <= 0:
+		# This is a lot of manual fiddling to transition from the regular
+		# play state into the one where you hope the ball falls into the 
+		# best bin.
+		_target_animation_player.stop()
+		_target.queue_free()
+		_offscreen.queue_free()
+		var endgame : Node2D = _EndGame.instance()
+		endgame.position = Vector2(0,800)
+		call_deferred("add_child", endgame)
+		endgame.connect("endgame", self, "_on_EndGame", [], CONNECT_ONESHOT)
+
+
 func _on_GameOver_dismissed():
 	GameState.reset()
 	get_tree().change_scene("res://src/Level.tscn")
+
+
