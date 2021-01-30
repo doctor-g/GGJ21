@@ -3,7 +3,7 @@
 [ext_resource path="res://src/PegGenerator.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 480, 269.232 )
+extents = Vector2( 400, 230 )
 
 [node name="PegGenerator" type="Node2D"]
 position = Vector2( 1.18921, 0 )
