@@ -18,6 +18,7 @@ var _spawn_area_bounds := Vector2.ZERO
 func _ready():
 	randomize()
 	_percent_of_upgraded_pegs /= 100
+# warning-ignore:narrowing_conversion
 	_upgraded_pegs = ceil(_max_pegs*_percent_of_upgraded_pegs)
 	var _spawn_area : Vector2 = $SpawnArea/CollisionShape2D.shape.extents*2
 	_spawn_area_offset = (get_viewport_rect().size-_spawn_area)/2
