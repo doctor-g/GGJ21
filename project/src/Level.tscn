@@ -108,8 +108,6 @@ shape = SubResource( 4 )
 
 [node name="PegGenerator" parent="." instance=ExtResource( 2 )]
 position = Vector2( -0.887942, 4.45148 )
-max_pegs = 1
-upgraded_pegs = 0
 
 [node name="GameOver" parent="." instance=ExtResource( 7 )]
 visible = false
