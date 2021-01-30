@@ -1,12 +1,12 @@
 extends Node2D
 
-signal pegs_ready(pegs)
+signal pegs_ready
 
 const _peg := preload("res://src/Peg.tscn")
 
 export var _max_pegs := 3.0
 export var _min_distance_between_pegs := 40.0
-export var _percent_of_upgraded_pegs := 33.0
+export(float,0,1,0.1) var _percent_of_upgraded_pegs := 0.3
 
 var _peg_positions := []
 var _upgraded_pegs:int = 0
@@ -14,15 +14,16 @@ var _upgraded_pegs:int = 0
 var _spawn_area_offset := Vector2.ZERO
 var _spawn_area_bounds := Vector2.ZERO
 
+
 func _ready():
 	randomize()
-	_percent_of_upgraded_pegs /= 100
 # warning-ignore:narrowing_conversion
 	_upgraded_pegs = ceil(_max_pegs*_percent_of_upgraded_pegs)
 	var _spawn_area : Vector2 = $SpawnArea/CollisionShape2D.shape.extents*2
 	_spawn_area_offset = (get_viewport_rect().size-_spawn_area)/2
 	_spawn_area_bounds = _spawn_area
 	_generate_pegs()
+
 
 func _generate_pegs():
 	for _i in _max_pegs:
@@ -44,4 +45,4 @@ func _generate_pegs():
 			_Peg.health = 3
 		_Peg.position = pos
 		$Pegs.add_child(_Peg)
-	emit_signal("pegs_ready", _max_pegs)
+	emit_signal("pegs_ready")

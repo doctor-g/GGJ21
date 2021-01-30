@@ -13,18 +13,6 @@ export var _bin_scores := [30,20,10]
 
 func _ready():
 	_shooter.arm()
-	_watch_pegs(self)
-
-
-# Recursively descent through all nodes, attaching destruction
-# listeners to each peg.
-func _watch_pegs(node):
-	for child in node.get_children():
-		if child is Peg:
-			_pegs_remaining += 1
-			child.connect("destroyed", self, "_on_Peg_destroyed")
-		else:
-			_watch_pegs(child)
 
 
 func _on_Peg_destroyed():
@@ -46,7 +34,7 @@ func _on_Peg_destroyed():
 
 func _on_EndGame(bin):
 	print('Completed the level in bin %d' % bin)
-	GameState.score += _bin_scores[abs(bin)]
+	GameState.add_points(_bin_scores[abs(bin)])
 
 
 func _on_OffScreen_body_entered(body):
@@ -59,8 +47,19 @@ func _on_OffScreen_body_entered(body):
 			_game_over.visible = true
 
 
-func _on_PegGenerator_pegs_ready(pegs):
-	_pegs_remaining = pegs
+func _on_PegGenerator_pegs_ready():
+	_watch_pegs(self)
+
+
+# Recursively descent through all nodes, attaching destruction
+# listeners to each peg.
+func _watch_pegs(node):
+	for child in node.get_children():
+		if child is Peg:
+			_pegs_remaining += 1
+			child.connect("destroyed", self, "_on_Peg_destroyed")
+		else:
+			_watch_pegs(child)
 
 
 func _on_GameOver_dismissed():
