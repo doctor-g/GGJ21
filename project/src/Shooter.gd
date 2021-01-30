@@ -43,6 +43,7 @@ func _process(_delta):
 
 
 func _shoot_ball():
+	GameState.lives -= 1
 	$Shot.play()
 	GameState.reset_chain()
 	_ball.mode = RigidBody2D.MODE_RIGID

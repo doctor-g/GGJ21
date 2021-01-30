@@ -24,7 +24,6 @@ func _on_EndGame(bin):
 func _on_OffScreen_body_entered(body):
 	if body is Ball:
 		body.queue_free()
-		GameState.lives -= 1
 		if GameState.lives > 0:
 			_shooter.arm()
 			$TopWall.reset()
