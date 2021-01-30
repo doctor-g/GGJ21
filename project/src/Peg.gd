@@ -8,7 +8,7 @@ signal destroyed()
 
 export var points_for_hit := 10
 export var points_for_destroy := 50
-export var health := 1
+export var health := 1 setget _set_health
 export var _gradient:Gradient
 
 onready var _colored_part := $PegBackground
@@ -18,7 +18,16 @@ var _health_colors := [Color.blue, Color.orange, Color.red]
 
 
 func _ready():
+	_update_color()
+	
+
+func _update_color():
 	_colored_part.modulate = _health_colors[health-1]
+
+
+func _set_health(value):
+	health = value
+	_update_color()
 
 
 func hit():
