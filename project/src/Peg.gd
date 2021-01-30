@@ -14,7 +14,7 @@ export var _gradient:Gradient
 onready var _colored_part := $PegBackground
 onready var _tween := $Tween
 
-var _health_colors := [Color.blue, Color.orange, Color.red]
+var _health_colors := [Color.blue, Color.red, Color(0.2,0.2,0.2)]
 
 
 func _ready():

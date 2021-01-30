@@ -6,8 +6,8 @@ const _Peg := preload("res://src/Peg.tscn")
 
 export var max_pegs := 20
 export var min_distance_between_pegs := 40.0
-export var upgraded_pegs := 5
-export var max_peg_health := 2
+export var upgraded_pegs := 40
+export var max_peg_health := 3
 
 var _peg_positions := []
 var _spawn_area_offset := Vector2.ZERO
