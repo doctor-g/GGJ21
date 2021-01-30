@@ -5,7 +5,7 @@ signal pegs_ready
 const _Peg := preload("res://src/Peg.tscn")
 
 export var max_pegs := 20
-export var min_distance_between_pegs := 40.0
+export var min_distance_between_pegs := 80.0
 export var upgraded_pegs := 5
 export var max_peg_health := 2
 
