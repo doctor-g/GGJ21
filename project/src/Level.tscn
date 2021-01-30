@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/Shooter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Peg.tscn" type="PackedScene" id=2]
 
 [node name="Level" type="Control"]
 anchor_right = 1.0
@@ -10,4 +11,7 @@ __meta__ = {
 }
 
 [node name="Shooter" parent="." instance=ExtResource( 1 )]
-position = Vector2( 78.7332, -0.222725 )
+position = Vector2( 506, 0 )
+
+[node name="Peg" parent="." instance=ExtResource( 2 )]
+position = Vector2( 506, 388.432 )
