@@ -18,10 +18,11 @@ margin_bottom = 255.831
 text = "GAME TITLE IS HERE"
 
 [node name="AnimalGrid" type="GridContainer" parent="."]
-margin_left = 455.377
-margin_top = 391.737
-margin_right = 495.377
-margin_bottom = 431.737
+margin_left = 62.0
+margin_top = 375.0
+margin_right = 957.0
+margin_bottom = 624.0
+columns = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
