@@ -13,12 +13,24 @@ export var _bin_scores := [30,20,10]
 
 func _ready():
 	_shooter.arm()
-	
+	_watch_pegs(self)
+
+
+# Recursively descent through all nodes, attaching destruction
+# listeners to each peg.
+func _watch_pegs(node):
+	for child in node.get_children():
+		if child is Peg:
+			_pegs_remaining += 1
+			child.connect("destroyed", self, "_on_Peg_destroyed")
+		else:
+			_watch_pegs(child)
 
 
 func _on_Peg_destroyed():
 	_pegs_remaining -= 1
-	GameState.score += 10
+	GameState.increase_chain()
+	GameState.add_points(10)
 	if _pegs_remaining <= 0:
 		# This is a lot of manual fiddling to transition from the regular
 		# play state into the one where you hope the ball falls into the 

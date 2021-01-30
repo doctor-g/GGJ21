@@ -1,6 +1,5 @@
 extends Node2D
 
-signal peg_destroyed
 signal pegs_ready(pegs)
 
 const _peg := preload("res://src/Peg.tscn")
@@ -45,9 +44,4 @@ func _generate_pegs():
 			_Peg.health = 3
 		_Peg.position = pos
 		$Pegs.add_child(_Peg)
-	for peg in $Pegs.get_children():
-		var _ignore = peg.connect("destroyed", self, "_on_peg_destroyed")
 	emit_signal("pegs_ready", _max_pegs)
-
-func _on_peg_destroyed():
-	emit_signal("peg_destroyed")
