@@ -1,7 +1,6 @@
 [gd_scene format=2]
 
 [node name="CirclePattern" type="Node2D"]
-position = Vector2( 0, 1 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 0, -80 )
