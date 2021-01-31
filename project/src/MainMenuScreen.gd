@@ -5,9 +5,12 @@ export var sprite_offset := Vector2(10,5)
 
 const BUTTON_FONT := preload("res://assets/fonts/qmark.tres")
 
+var _music_bus_index := AudioServer.get_bus_index("Music")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$MuteMusicButton.pressed = AudioServer.is_bus_mute(_music_bus_index)
+	
 	for i in range(0,AnimalSettings.ANIMALS.size()):
 		var button := Button.new()
 		button.connect("pressed", self, "_on_Button_pressed", [i])
@@ -32,3 +35,7 @@ func _on_Button_pressed(animal_index)->void:
 	GameState.reset()
 	GameState.animal_index = animal_index
 	get_tree().change_scene("res://src/Level.tscn")
+
+
+func _on_MuteMusicButton_toggled(button_pressed):
+	AudioServer.set_bus_mute(_music_bus_index, button_pressed)

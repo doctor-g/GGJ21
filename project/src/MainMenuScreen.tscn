@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/MainMenuScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/Tienne-Bold.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
 
 [node name="MainMenuScreen" type="Control"]
 anchor_right = 1.0
@@ -12,24 +16,30 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 margin_left = 441.235
-margin_top = 241.831
+margin_top = 121.966
 margin_right = 568.235
-margin_bottom = 255.831
+margin_bottom = 135.966
 text = "GAME TITLE IS HERE"
 
 [node name="AnimalGrid" type="GridContainer" parent="."]
 margin_left = 184.0
-margin_top = 329.0
+margin_top = 209.135
 margin_right = 832.0
-margin_bottom = 760.0
+margin_bottom = 640.135
 columns = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="MuteMusicButton" type="CheckButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -90.0
+margin_top = -95.4374
+margin_right = 90.0
+margin_bottom = -55.4374
+custom_fonts/font = SubResource( 1 )
+text = "Mute Music"
+[connection signal="toggled" from="MuteMusicButton" to="." method="_on_MuteMusicButton_toggled"]
