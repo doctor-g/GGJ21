@@ -8,43 +8,65 @@
 [ext_resource path="res://assets/fonts/PottaOne-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/fonts/unlock_memo.tres" type="DynamicFont" id=7]
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.713726, 0.772549, 0, 1 )
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 1, 1, 0.380392, 1 )
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.933333, 0.745098, 0, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.94902, 0.85098, 0.447059, 1 )
+border_blend = true
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 1, 1, 0, 1 )
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.94902, 0.85098, 0.447059, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 0.8, 0, 1 )
+border_blend = true
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0.721569, 0.423529, 0, 1 )
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.27451, 0.27451, 0.27451, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.184314, 0.164706, 0.14902, 1 )
+border_blend = true
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=5]
 size = 48
 outline_size = 4
 outline_color = Color( 0.866667, 0.0980392, 0.0980392, 1 )
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 2 )
-
 [sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
 size = 19
 font_data = ExtResource( 2 )
 
@@ -55,10 +77,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-_pressed = SubResource( 8 )
-_hover = SubResource( 9 )
-_normal = SubResource( 10 )
-_disabled = SubResource( 11 )
+_pressed = SubResource( 1 )
+_hover = SubResource( 2 )
+_normal = SubResource( 3 )
+_disabled = SubResource( 4 )
 
 [node name="farm_background" type="Sprite" parent="."]
 texture = ExtResource( 5 )
@@ -74,7 +96,7 @@ margin_left = -188.5
 margin_top = 71.9187
 margin_right = 188.5
 margin_bottom = 141.919
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 5 )
 text = "Gather 'Round"
 align = 1
 __meta__ = {
@@ -100,7 +122,7 @@ margin_left = -90.0
 margin_top = -135.892
 margin_right = 90.0
 margin_bottom = -95.8917
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 text = "Fullscreen"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -115,7 +137,7 @@ margin_left = -90.0
 margin_top = -95.4374
 margin_right = 90.0
 margin_bottom = -55.4374
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 text = "Mute Music"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -126,7 +148,7 @@ margin_left = 449.492
 margin_top = 756.645
 margin_right = 536.492
 margin_bottom = 784.645
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Reset All"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -137,7 +159,7 @@ margin_left = 678.585
 margin_top = 729.675
 margin_right = 991.585
 margin_bottom = 808.675
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "A Global Game Jam Game
 by Paul, Alex, and Jessica"
 align = 2

@@ -6,6 +6,7 @@ export var _normal:StyleBoxFlat = StyleBoxFlat.new()
 export var _disabled:StyleBoxFlat = StyleBoxFlat.new()
 export var icon_size := 100.0
 export var sprite_offset := Vector2(10,5)
+export var _button_font_color := Color("#f2d972")
 
 const BUTTON_FONT := preload("res://assets/fonts/qmark.tres")
 const UNLOCK_FONT := preload("res://assets/fonts/unlock_memo.tres")
@@ -38,11 +39,13 @@ func _ready():
 		else:
 			button.disabled = true
 			button.text = "?"
+			button.set("custom_colors/font_color_disabled", _button_font_color)
 			button.add_font_override("font", BUTTON_FONT)
 			if GameState.unlock_level + 1 == i:
 				var label := Label.new()
 				label.align = HALIGN_CENTER
 				label.text = '%d to unlock!' % AnimalSettings.ANIMALS[i].score
+				label.set("custom_colors/font_color", _button_font_color)
 				label.rect_position = Vector2(18,80) # It works, the magic number.
 				label.add_font_override("font", UNLOCK_FONT)
 				button.add_child(label)
