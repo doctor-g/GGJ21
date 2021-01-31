@@ -1,15 +1,56 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Tienne.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/fonts/Tienne-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/New Piskel (1).png" type="Texture" id=4]
 [ext_resource path="res://assets/animals/chick.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/Tienne-Bold.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
 outline_size = 1
 font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Wave"
+length = 2.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("NewAnimal:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 500, -0.25, 0, 0.25, 0, 330.729, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0, 670, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("NewAnimal:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 230, -0.25, 0, 0.25, 0, 307.508, -0.25, 0, 0.25, 0, 230, -0.25, 0, 0.25, 0, 300, -0.25, 0, 0.25, 0, 230, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("NewAnimal:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -33.727, -0.15, 4.90353, 0.24, 17.3451, 0, -0.18, -41.2651, 0.24, 35.4581, 40, -0.25, 0, 0.54, -56.3819, 0, -0.37, 23.0165, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 )
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 26
+outline_size = 1
+font_data = ExtResource( 6 )
 
 [node name="GameOver" type="Control"]
 anchor_right = 1.0
@@ -20,22 +61,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( 495.829, 449.212 )
+[node name="Background" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="Background"]
+position = Vector2( 500, 400 )
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Label" type="Label" parent="Background"]
+[node name="NewHigh" type="Label" parent="Background"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -258.329
-margin_top = -248.212
-margin_right = -93.329
-margin_bottom = -210.212
+margin_left = -175.0
+margin_top = -19.0
+margin_right = 175.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "[NewHigh]"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -89.0
+margin_top = -85.0
+margin_right = 89.0
+margin_bottom = 85.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Background/VBoxContainer"]
+margin_right = 178.0
+margin_bottom = 38.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Game Over!"
@@ -44,15 +117,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HighScore" type="Label" parent="Background"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -350.829
-margin_top = -179.212
-margin_right = -0.82901
-margin_bottom = -141.212
+[node name="HighScore" type="Label" parent="Background/VBoxContainer"]
+margin_top = 42.0
+margin_right = 178.0
+margin_bottom = 80.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "[HighScore]"
@@ -62,34 +130,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NewHigh" type="Label" parent="Background"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -348.845
-margin_top = -199.055
-margin_right = 1.155
-margin_bottom = -161.055
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "[NewHigh]"
-align = 1
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="YourScore" type="Label" parent="Background"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -351.226
-margin_top = -216.119
-margin_right = -1.22601
-margin_bottom = -178.119
+[node name="YourScore" type="Label" parent="Background/VBoxContainer"]
+margin_top = 84.0
+margin_right = 178.0
+margin_bottom = 122.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "[Score]"
@@ -99,15 +143,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PopupButton" type="Button" parent="Background"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -257.329
-margin_top = -129.212
-margin_right = -94.329
-margin_bottom = -85.212
+[node name="ContinueButton" type="Button" parent="Background/VBoxContainer"]
+margin_top = 126.0
+margin_right = 178.0
+margin_bottom = 170.0
 custom_fonts/font = ExtResource( 2 )
 text = "Main Menu"
 __meta__ = {
@@ -115,25 +154,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NewAnimal" type="Sprite" parent="."]
+[node name="Unlocked" type="Node2D" parent="."]
 visible = false
-position = Vector2( 501.846, 438.818 )
+
+[node name="NewAnimal" type="Sprite" parent="Unlocked"]
+position = Vector2( 650.855, 292.117 )
+rotation = 0.462766
 texture = ExtResource( 5 )
 
-[node name="PopupButton2" type="Button" parent="NewAnimal"]
+[node name="PopupButton2" type="Button" parent="Unlocked"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -151.846
-margin_top = -6.8176
-margin_right = 11.1544
-margin_bottom = 37.1824
+margin_left = 420.4
+margin_top = 441.189
+margin_right = 583.4
+margin_bottom = 485.189
 custom_fonts/font = ExtResource( 2 )
 text = "Play Again"
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Background/PopupButton" to="." method="_on_PlayAgainButton_pressed"]
-[connection signal="pressed" from="NewAnimal/PopupButton2" to="." method="_on_PostUnlockButton_pressed"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Unlocked"]
+anims/Wave = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Unlocked"]
+margin_left = 409.796
+margin_top = 100.113
+margin_right = 604.796
+margin_bottom = 136.113
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0.819608, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "YOU FOUND..."
+[connection signal="pressed" from="Background/VBoxContainer/ContinueButton" to="." method="_on_PlayAgainButton_pressed"]
+[connection signal="pressed" from="Unlocked/PopupButton2" to="." method="_on_PostUnlockButton_pressed"]

@@ -1,30 +1,36 @@
 extends Control
 
+onready var _high_score := $Background/VBoxContainer/HighScore
+onready var _score := $Background/VBoxContainer/YourScore
+onready var _new_high := $Background/NewHigh
+onready var _continue := $Background/VBoxContainer/ContinueButton
+
 func _ready():
-	$Background/HighScore.text = ""
-	$Background/YourScore.text = ""
-	$Background/NewHigh.text = ""
+	_high_score.text = ""
+	_score.text = ""
+	_new_high.text = ""
 
 
 func show():
 	visible = true
 	
 	if GameState.highscore == GameState.get_score():
-		$Background/NewHigh.text = "New High Score! "+str(GameState.highscore)
+		_new_high.text = "New High Score! "+str(GameState.highscore)
 	else:
-		$Background/HighScore.text = "High Score: "+str(GameState.highscore)
-		$Background/YourScore.text = "Your Score: "+str(GameState.get_score())
+		_high_score.text = "High Score: "+str(GameState.highscore)
+		_score.text = "Your Score: "+str(GameState.get_score())
 	
 	if GameState.new_unlock:
-		$Background/PopupButton.text = "Unlock Animal!"
+		_continue.text = "Unlock Animal!"
 
 
 func _on_PlayAgainButton_pressed():
 	if GameState.new_unlock:
 		$Background.visible = false
 		GameState.unlock_level += 1
-		$NewAnimal.texture = AnimalSettings.ANIMALS[GameState.unlock_level].image
-		$NewAnimal.visible = true
+		$Unlocked/NewAnimal.texture = AnimalSettings.ANIMALS[GameState.unlock_level].image
+		$Unlocked.visible = true
+		$Unlocked/AnimationPlayer.play("Wave")
 	else:
 		get_tree().change_scene("res://src/MainMenuScreen.tscn")
 
