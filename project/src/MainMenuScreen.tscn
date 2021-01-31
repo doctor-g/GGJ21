@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/MainMenuScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Tienne-Bold.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 2 )
 
 [node name="MainMenuScreen" type="Control"]
@@ -60,5 +63,14 @@ text = "Mute Music"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ResetButton" type="Button" parent="."]
+margin_left = 449.492
+margin_top = 756.645
+margin_right = 536.492
+margin_bottom = 784.645
+custom_fonts/font = SubResource( 2 )
+text = "Reset All"
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_FullscreenButton_toggled"]
 [connection signal="toggled" from="MuteMusicButton" to="." method="_on_MuteMusicButton_toggled"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]

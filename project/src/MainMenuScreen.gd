@@ -44,3 +44,8 @@ func _on_MuteMusicButton_toggled(button_pressed):
 
 func _on_FullscreenButton_toggled(button_pressed):
 	OS.window_fullscreen = button_pressed
+
+
+func _on_ResetButton_pressed():
+	GameState.reset_config()
+	get_tree().change_scene("res://src/MainMenuScreen.tscn")

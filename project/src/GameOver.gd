@@ -25,6 +25,7 @@ func show():
 
 
 func _on_PlayAgainButton_pressed():
+	GameState.save_config() # This has to be done sometime, so do it now.
 	if GameState.new_unlock:
 		$Background.visible = false
 		GameState.unlock_level += 1
