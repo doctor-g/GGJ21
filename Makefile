@@ -15,13 +15,13 @@ zip: windows linux
 	mkdir -p build/zip
 	mkdir -p build/zip/src
 	rsync -av --progress project build/zip/src --exclude .import
-	echo "This project was built using [Godot Engine](https://godotengine.org)." >> build/zip/src/README.md
+	echo "This project was built using [Godot Engine](https://godotengine.org)." > build/zip/src/README.md
 	mkdir -p build/zip/release/linux
 	mkdir -p build/zip/release/windows
 	cp -r build/windows/* build/zip/release/windows
 	cp -r build/linux/* build/zip/release/linux
 	cp LICENSE build/zip
-	echo "Windows and Linux binaries are provided. You can also [play online!](https://doctor-g.github.io/GGJ21)" >> build/zip/release/README.md
+	echo "Windows and Linux binaries are provided. You can also [play online!](https://doctor-g.github.io/GGJ21)" > build/zip/release/README.md
 	mkdir -p build/zip/press
 	cp raw_assets/promotional/*png build/zip/press
 	cd build/zip;	zip bounce.zip -r .
