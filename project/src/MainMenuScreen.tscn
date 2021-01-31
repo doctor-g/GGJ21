@@ -31,6 +31,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="FullscreenButton" type="CheckButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -90.0
+margin_top = -135.892
+margin_right = 90.0
+margin_bottom = -95.8917
+custom_fonts/font = SubResource( 1 )
+text = "Fullscreen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MuteMusicButton" type="CheckButton" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -42,4 +57,8 @@ margin_right = 90.0
 margin_bottom = -55.4374
 custom_fonts/font = SubResource( 1 )
 text = "Mute Music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="toggled" from="FullscreenButton" to="." method="_on_FullscreenButton_toggled"]
 [connection signal="toggled" from="MuteMusicButton" to="." method="_on_MuteMusicButton_toggled"]

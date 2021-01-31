@@ -10,6 +10,7 @@ var _music_bus_index := AudioServer.get_bus_index("Music")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$MuteMusicButton.pressed = AudioServer.is_bus_mute(_music_bus_index)
+	$FullscreenButton.pressed = OS.window_fullscreen
 	
 	for i in range(0,AnimalSettings.ANIMALS.size()):
 		var button := Button.new()
@@ -39,3 +40,7 @@ func _on_Button_pressed(animal_index)->void:
 
 func _on_MuteMusicButton_toggled(button_pressed):
 	AudioServer.set_bus_mute(_music_bus_index, button_pressed)
+
+
+func _on_FullscreenButton_toggled(button_pressed):
+	OS.window_fullscreen = button_pressed
