@@ -4,6 +4,7 @@ export var icon_size := 100.0
 export var sprite_offset := Vector2(10,5)
 
 const BUTTON_FONT := preload("res://assets/fonts/qmark.tres")
+const _ConfirmationDialog := preload("res://src/ConfirmationDialog.tscn")
 
 var _music_bus_index := AudioServer.get_bus_index("Music")
 
@@ -49,5 +50,11 @@ func _on_FullscreenButton_toggled(button_pressed):
 
 
 func _on_ResetButton_pressed():
+	var dialog := _ConfirmationDialog.instance()
+	dialog.connect("confirmed", self, "_on_ConfirmationDialog_confirmed")
+	add_child(dialog)
+
+
+func _on_ConfirmationDialog_confirmed():
 	GameState.reset_config()
 	get_tree().change_scene("res://src/MainMenuScreen.tscn")
