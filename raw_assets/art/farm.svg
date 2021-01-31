@@ -545,6 +545,180 @@
          in2="result4"
          id="feBlend3042" />
     </filter>
+    <filter
+       inkscape:label="Matte Ridge"
+       inkscape:menu="Ridges"
+       inkscape:menu-tooltip="Soft pastel ridge"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1568">
+      <feGaussianBlur
+         stdDeviation="0.5"
+         result="result1"
+         id="feGaussianBlur1542" />
+      <feBlend
+         in="SourceGraphic"
+         mode="normal"
+         result="result5"
+         in2="result1"
+         id="feBlend1544" />
+      <feGaussianBlur
+         stdDeviation="3"
+         result="result6"
+         in="result5"
+         id="feGaussianBlur1546" />
+      <feComposite
+         operator="xor"
+         in="result6"
+         in2="result6"
+         result="result8"
+         id="feComposite1548" />
+      <feComposite
+         operator="in"
+         result="fbSourceGraphic"
+         in="result6"
+         in2="result8"
+         id="feComposite1550" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0 "
+         id="feColorMatrix1552" />
+      <feGaussianBlur
+         result="result0"
+         in="fbSourceGraphic"
+         stdDeviation="0.5"
+         id="feGaussianBlur1554" />
+      <feSpecularLighting
+         specularExponent="55"
+         specularConstant="2"
+         surfaceScale="2"
+         lighting-color="rgb(255,255,255)"
+         result="result1"
+         in="result0"
+         id="feSpecularLighting1558">
+        <fePointLight
+           z="20000"
+           y="-10000"
+           x="-5000"
+           id="fePointLight1556" />
+      </feSpecularLighting>
+      <feComposite
+         operator="arithmetic"
+         result="result2"
+         in="result1"
+         in2="fbSourceGraphicAlpha"
+         k1="1"
+         id="feComposite1560" />
+      <feComposite
+         k3="1"
+         k2="0.5"
+         operator="arithmetic"
+         result="result4"
+         in="fbSourceGraphic"
+         in2="result2"
+         id="feComposite1562" />
+      <feComposite
+         operator="over"
+         in="result9"
+         in2="result4"
+         result="result91"
+         id="feComposite1564" />
+      <feBlend
+         mode="screen"
+         in2="result91"
+         id="feBlend1566" />
+    </filter>
+    <filter
+       inkscape:label="Glowing Bubble"
+       inkscape:menu="Ridges"
+       inkscape:menu-tooltip="Bubble effect with refraction and glow"
+       x="-0.25"
+       y="-0.25"
+       width="1.5"
+       height="1.5"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1719">
+      <feGaussianBlur
+         stdDeviation="1"
+         result="result1"
+         id="feGaussianBlur1695" />
+      <feGaussianBlur
+         stdDeviation="10"
+         result="result6"
+         in="result1"
+         id="feGaussianBlur1697" />
+      <feComposite
+         operator="atop"
+         in="result6"
+         in2="result1"
+         result="result8"
+         id="feComposite1699" />
+      <feComposite
+         operator="xor"
+         result="fbSourceGraphic"
+         in="result6"
+         in2="result8"
+         id="feComposite1701" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 2 0 "
+         id="feColorMatrix1703" />
+      <feGaussianBlur
+         result="result0"
+         in="fbSourceGraphicAlpha"
+         stdDeviation="1"
+         id="feGaussianBlur1705" />
+      <feSpecularLighting
+         specularExponent="35"
+         specularConstant="1.5"
+         surfaceScale="-2"
+         lighting-color="rgb(255,255,255)"
+         result="result1"
+         in="result0"
+         id="feSpecularLighting1709">
+        <feDistantLight
+           azimuth="230"
+           elevation="60"
+           id="feDistantLight1707" />
+      </feSpecularLighting>
+      <feComposite
+         operator="in"
+         result="result2"
+         in="result1"
+         in2="fbSourceGraphicAlpha"
+         id="feComposite1711" />
+      <feComposite
+         k3="1"
+         k2="1"
+         operator="arithmetic"
+         result="result4"
+         in="fbSourceGraphic"
+         in2="result2"
+         id="feComposite1713" />
+      <feComposite
+         operator="atop"
+         in="result9"
+         in2="result4"
+         result="result91"
+         id="feComposite1715" />
+      <feBlend
+         mode="multiply"
+         in2="result91"
+         id="feBlend1717" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1729">
+      <rect
+         style="opacity:1;vector-effect:none;fill:#ff9900;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6.9061327;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+         id="rect1731"
+         width="155.03641"
+         height="33.83989"
+         x="441.15759"
+         y="261.44724"
+         ry="16.919945" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -553,18 +727,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.38591296"
-     inkscape:cx="175.59798"
-     inkscape:cy="6.3091411"
+     inkscape:zoom="0.54576334"
+     inkscape:cx="596.21395"
+     inkscape:cy="595.06993"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
      borderlayer="true"
      inkscape:window-width="1680"
-     inkscape:window-height="985"
-     inkscape:window-x="0"
-     inkscape:window-y="36"
+     inkscape:window-height="1021"
+     inkscape:window-x="1680"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-global="true"
      inkscape:measure-start="0,0"
@@ -3942,49 +4116,38 @@
      transform="translate(0,-85.333317)"
      style="display:inline">
     <path
+       style="opacity:1;vector-effect:none;fill:#ff9900;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke;filter:url(#filter1719)"
+       d="m 467.17578,267.36719 c -6.094,0 -11,4.906 -11,11 0,6.094 4.906,11 11,11 h 103 c 6.094,0 11,-4.906 11,-11 0,-6.094 -4.906,-11 -11,-11 z"
+       transform="matrix(0.23550921,0,0,0.17201101,224.27918,-88.072581)"
+       id="rect1591"
+       inkscape:connector-curvature="0"
+       clip-path="url(#clipPath1729)"
+       inkscape:export-filename="/home/jkg/Documents/projects/game-jam-family/GGJ21/project/assets/paddle.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
        style="opacity:1;vector-effect:none;fill:#31cc73;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.06855047;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke;filter:url(#filter3044)"
        d="m 418.8418,651.73242 c -5.65307,0 -10.20313,3.96423 -10.20313,8.88867 v 2.22266 c 0,4.92445 4.55006,8.88867 10.20313,8.88867 h 104.59179 c 5.65307,0 10.20508,-3.96422 10.20508,-8.88867 v -2.22266 c 0,-4.92444 -4.55201,-8.88867 -10.20508,-8.88867 z"
-       transform="matrix(0.26458333,0,0,0.26458333,3.0852165,71.021341)"
+       transform="matrix(0.26458333,0,0,0.26458333,214.45583,-123.38145)"
        id="rect2966"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/jkg/Documents/projects/game-jam-family/GGJ21/project/assets/paddle.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <g
-       id="g2932"
-       transform="matrix(0.98249697,0,0,0.92540867,1.2991589,18.158985)">
-      <g
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         inkscape:export-filename="/home/jkg/Documents/projects/game-jam-family/GGJ21/project/assets/frame.png"
-         transform="matrix(1.0750822,0,0,1.0860075,-8.8983009,-15.39497)"
-         id="g3127">
-        <path
-           style="opacity:1;vector-effect:none;fill:#2ecc71;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
-           d="M -14.867188,-14.740234 V 814.74023 H 1014.8672 V -14.740234 Z M 67.980469,36.59375 H 932.01953 c 15.76823,0 28.46289,12.694662 28.46289,28.462891 V 734.94336 c 0,15.76823 -12.69466,28.46289 -28.46289,28.46289 H 67.980469 c -15.768229,0 -28.462891,-12.69466 -28.462891,-28.46289 V 65.056641 c 0,-15.768229 12.694662,-28.462891 28.462891,-28.462891 z"
-           id="rect821"
-           inkscape:connector-curvature="0"
-           transform="matrix(0.26458333,0,0,0.26458333,0,85.333317)" />
-      </g>
-      <path
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         inkscape:export-filename="/home/jkg/Documents/projects/game-jam-family/GGJ21/project/assets/frame.png"
-         inkscape:connector-curvature="0"
-         style="opacity:1;vector-effect:none;fill:#31db79;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke;filter:url(#filter955)"
-         d="M -14.867188,-14.740234 V 814.74023 H 1014.8672 V -14.740234 Z M 67.980469,36.59375 H 932.01953 c 15.76823,0 28.46289,12.694662 28.46289,28.462891 V 734.94336 c 0,15.76823 -12.69466,28.46289 -28.46289,28.46289 H 67.980469 c -15.768229,0 -28.462891,-12.69466 -28.462891,-28.46289 V 65.056641 c 0,-15.768229 12.694662,-28.462891 28.462891,-28.462891 z"
-         transform="matrix(0.28444883,0,0,0.28733948,-8.8983009,77.277652)"
-         id="path877" />
-    </g>
-    <circle
-       style="opacity:1;vector-effect:none;fill:#365a66;fill-opacity:1;fill-rule:nonzero;stroke:#365a66;stroke-width:0.31019941;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
-       id="path4575"
-       cx="132.29167"
-       cy="97.462929"
-       r="8.3612747"
+       id="g3127"
+       transform="matrix(1.056265,0,0,1.0050008,-7.4433948,3.9123463)"
        inkscape:export-filename="/home/jkg/Documents/projects/game-jam-family/GGJ21/project/assets/frame.png"
        inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
+       inkscape:export-ydpi="96"
+       style="fill:#ffd531;fill-opacity:0.88235295">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect821"
+         d="M -14.867188,-14.740234 V 814.74023 H 1014.8672 V -14.740234 Z M 67.980469,36.59375 H 932.01953 c 15.76823,0 28.46289,12.694662 28.46289,28.462891 V 734.94336 c 0,15.76823 -12.69466,28.46289 -28.46289,28.46289 H 67.980469 c -15.768229,0 -28.462891,-12.69466 -28.462891,-28.46289 V 65.056641 c 0,-15.768229 12.694662,-28.462891 28.462891,-28.462891 z"
+         style="opacity:1;vector-effect:none;fill:#ffd531;fill-opacity:0.88235295;fill-rule:nonzero;stroke:none;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+         transform="matrix(0.26458333,0,0,0.26458333,0,85.333317)" />
+    </g>
     <rect
        style="opacity:1;vector-effect:none;fill:#365a66;fill-opacity:1;fill-rule:nonzero;stroke:#31db79;stroke-width:0.46807209;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
        id="rect4799"
@@ -4009,5 +4172,99 @@
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"
        rx="4.9793859" />
+    <g
+       style="display:inline"
+       id="g8553-4"
+       transform="matrix(10.940642,0,0,10.940642,1551.0193,-443.90919)">
+      <path
+         d="m -114.40704,56.159231 -0.005,-0.180937 q 0,-2.397411 1.69628,-4.093693 1.69629,-1.696281 4.0937,-1.696281 2.39288,0 4.08917,1.696281 1.7008,1.696282 1.7008,4.093693 v 0.180937 q -0.0633,-2.279803 -1.7008,-3.912757 -1.69629,-1.696281 -4.08917,-1.696281 -2.39741,0 -4.0937,1.696281 -1.63295,1.632954 -1.69175,3.912757"
+         id="path240-0"
+         inkscape:connector-curvature="0"
+         style="fill:#ffd738;stroke:none;stroke-width:0.09046835" />
+      <path
+         d="m -102.83162,56.159231 q -0.0633,2.275279 -1.7008,3.908232 -0.35283,0.35735 -0.73732,0.637802 l -0.19903,-0.361873 q -1.36155,-2.383841 -3.29305,-2.383841 -1.9315,0 -3.29757,2.383841 l -0.11309,0.208077 -0.54281,-0.484006 q -1.63295,-1.632953 -1.69175,-3.908232 0.0588,-2.279803 1.69175,-3.912757 1.69629,-1.696281 4.0937,-1.696281 2.39288,0 4.08917,1.696281 1.63747,1.632954 1.7008,3.912757"
+         id="path242-8"
+         inkscape:connector-curvature="0"
+         style="fill:#ffcc00;stroke:none;stroke-width:0.09046835" />
+      <path
+         d="m -105.26974,60.705265 q -1.46106,1.063003 -3.35185,1.063003 -2.02649,0 -3.55089,-1.216799 l 0.11309,-0.208077 q 1.36607,-2.383841 3.29757,-2.383841 1.9315,0 3.29305,2.383841 l 0.19903,0.361873"
+         id="path244-5"
+         inkscape:connector-curvature="0"
+         style="fill:#eebe00;stroke:none;stroke-width:0.09046835" />
+      <path
+         d="m -104.66813,56.240652 q 0,-0.330209 -0.22164,-0.551857 -0.2307,-0.230694 -0.56091,-0.230694 -0.31664,0 -0.55185,0.230694 -0.2307,0.221648 -0.2307,0.551857 l 0.005,0.0769 q 0.0226,0.266882 0.22618,0.461389 0.23521,0.226171 0.55185,0.226171 0.33021,0 0.56091,-0.226171 0.1945,-0.194507 0.21712,-0.461389 l 0.005,-0.0769 m 0.68304,0.009 q 0,0.51567 -0.3664,0.868496 -0.36639,0.37092 -0.88206,0.37092 -0.50663,0 -0.88207,-0.37092 -0.35735,-0.352826 -0.35735,-0.868496 0,-0.520193 0.35735,-0.882066 0.37544,-0.366397 0.88207,-0.366397 0.51567,0 0.88206,0.366397 0.3664,0.361873 0.3664,0.882066"
+         id="path246-1"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;stroke:none;stroke-width:0.09046835" />
+      <path
+         d="m -104.66813,56.240652 -0.005,0.0769 q -0.0226,0.266882 -0.21712,0.461389 -0.2307,0.226171 -0.56091,0.226171 -0.31664,0 -0.55185,-0.226171 -0.20356,-0.194507 -0.22618,-0.461389 l -0.005,-0.0769 q 0,-0.330209 0.2307,-0.551857 0.23521,-0.230694 0.55185,-0.230694 0.33021,0 0.56091,0.230694 0.22164,0.221648 0.22164,0.551857"
+         id="path248-6"
+         inkscape:connector-curvature="0"
+         style="fill:#5b5b5b;stroke:none;stroke-width:0.09046835" />
+      <path
+         d="m -112.57506,56.240652 q 0,-0.330209 0.22165,-0.551857 0.23069,-0.230694 0.5609,-0.230694 0.31664,0 0.55186,0.230694 0.23069,0.221648 0.23069,0.551857 l -0.005,0.0769 q -0.0226,0.266882 -0.22617,0.461389 -0.23522,0.226171 -0.55186,0.226171 -0.33021,0 -0.5609,-0.226171 -0.19451,-0.194507 -0.21713,-0.461389 l -0.005,-0.0769"
+         id="path250-6"
+         inkscape:connector-curvature="0"
+         style="fill:#5b5b5b;stroke:none;stroke-width:0.09046835" />
+      <path
+         d="m -112.57506,56.240652 0.005,0.0769 q 0.0226,0.266882 0.21713,0.461389 0.23069,0.226171 0.5609,0.226171 0.31664,0 0.55186,-0.226171 0.20355,-0.194507 0.22617,-0.461389 l 0.005,-0.0769 q 0,-0.330209 -0.23069,-0.551857 -0.23522,-0.230694 -0.55186,-0.230694 -0.33021,0 -0.5609,0.230694 -0.22165,0.221648 -0.22165,0.551857 m -0.68304,0.009 q 0,-0.520193 0.3664,-0.882066 0.3664,-0.366397 0.88207,-0.366397 0.50662,0 0.88206,0.366397 0.35735,0.361873 0.35735,0.882066 0,0.51567 -0.35735,0.868496 -0.37544,0.37092 -0.88206,0.37092 -0.51567,0 -0.88207,-0.37092 -0.3664,-0.352826 -0.3664,-0.868496"
+         id="path252-2"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;stroke:none;stroke-width:0.09046835" />
+      <path
+         d="m -106.59963,57.068438 q -0.0452,0.122132 -0.17641,0.235217 -0.11761,-0.456865 -0.49757,-0.814215 l -0.21261,-0.176413 q -0.48852,-0.339257 -1.12633,-0.339257 -0.6378,0 -1.12633,0.339257 -0.11308,0.0769 -0.22164,0.176413 -0.37545,0.35735 -0.49306,0.814215 -0.1357,-0.108562 -0.18093,-0.235217 0.0995,-0.628756 0.56995,-1.108238 0.11761,-0.117609 0.23974,-0.203554 0.52471,-0.393537 1.21227,-0.393537 0.68756,0 1.21228,0.393537 l 0.23069,0.203554 q 0.47496,0.479482 0.56995,1.108238"
+         id="path254-1"
+         inkscape:connector-curvature="0"
+         style="fill:#ff9900;stroke:none;stroke-width:0.09046835" />
+      <path
+         d="m -110.45358,57.303655 q 0.11761,-0.456865 0.49306,-0.814215 0.10856,-0.09952 0.22164,-0.176413 0.48853,-0.339257 1.12633,-0.339257 0.63781,0 1.12633,0.339257 l 0.21261,0.176413 q 0.37996,0.35735 0.49757,0.814215 -0.14475,0.117609 -0.39354,0.217124 -0.59709,0.244265 -1.44297,0.244265 -0.8504,0 -1.45201,-0.244265 -0.24879,-0.09951 -0.38902,-0.217124"
+         id="path256-9"
+         inkscape:connector-curvature="0"
+         style="fill:#f39100;stroke:none;stroke-width:0.09046835" />
+      <path
+         d="m -106.59963,57.068438 0.0272,0.334732 -0.009,0.135703 q -0.0362,0.452342 -0.58805,0.778028 -0.59709,0.348303 -1.44297,0.348303 -0.8504,0 -1.45201,-0.348303 -0.54734,-0.325686 -0.58805,-0.778028 l -0.005,-0.135703 q 0,-0.176413 0.0226,-0.334732 0.0452,0.126655 0.18093,0.235217 0.14023,0.117609 0.38902,0.217124 0.60161,0.244265 1.45201,0.244265 0.84588,0 1.44297,-0.244265 0.24879,-0.09951 0.39354,-0.217124 0.13118,-0.113085 0.17641,-0.235217"
+         id="path258-6"
+         inkscape:connector-curvature="0"
+         style="fill:#e08600;stroke:none;stroke-width:0.09046835" />
+      <path
+         d="m -107.40932,51.676524 q 0.35283,0.610661 0.42068,1.144424 0.0814,0.52924 -0.16737,0.669466 -0.24878,0.14475 -0.67398,-0.18546 -0.41616,-0.330209 -0.76899,-0.940871 l -0.0814,-0.140226 q -0.14475,-0.289498 -0.10856,-0.588044 0.0362,-0.330209 0.28498,-0.474959 0.24878,-0.140226 0.55638,-0.009 0.2714,0.117609 0.45234,0.389014 l 0.0859,0.135703 m -1.78222,0.696606 q -0.2307,0.407108 -0.51567,0.624232 -0.27593,0.221647 -0.43877,0.122132 -0.16285,-0.09047 -0.11309,-0.443295 0.0498,-0.352826 0.28045,-0.755411 l 0.0543,-0.09499 q 0.12214,-0.180937 0.30307,-0.257835 0.20356,-0.09047 0.3664,0.0045 0.16284,0.09951 0.18998,0.321163 0.0226,0.189983 -0.0724,0.38449 l -0.0543,0.09499"
+         id="path260-4"
+         inkscape:connector-curvature="0"
+         style="fill:#eebe00;stroke:none;stroke-width:0.09046835" />
+    </g>
+    <g
+       style="fill:#ff9900;fill-opacity:1;filter:url(#filter1568)"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="/home/jkg/Documents/projects/game-jam-family/GGJ21/project/assets/frame.png"
+       transform="matrix(1.056265,0,0,1.0050008,-7.4433948,3.9123463)"
+       id="g1540">
+      <path
+         style="opacity:1;vector-effect:none;fill:#ff9900;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+         d="M -14.867188,-14.740234 V 814.74023 H 1014.8672 V -14.740234 Z M 67.980469,36.59375 H 932.01953 c 15.76823,0 28.46289,12.694662 28.46289,28.462891 V 734.94336 c 0,15.76823 -12.69466,28.46289 -28.46289,28.46289 H 67.980469 c -15.768229,0 -28.462891,-12.69466 -28.462891,-28.46289 V 65.056641 c 0,-15.768229 12.694662,-28.462891 28.462891,-28.462891 z"
+         id="path1538"
+         inkscape:connector-curvature="0"
+         transform="matrix(0.26458333,0,0,0.26458333,0,85.333317)" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1570"
+         d="M -14.867188,-14.740234 V 814.74023 H 1014.8672 V -14.740234 Z M 67.980469,36.59375 H 932.01953 c 15.76823,0 28.46289,12.694662 28.46289,28.462891 V 734.94336 c 0,15.76823 -12.69466,28.46289 -28.46289,28.46289 H 67.980469 c -15.768229,0 -28.462891,-12.69466 -28.462891,-28.46289 V 65.056641 c 0,-15.768229 12.694662,-28.462891 28.462891,-28.462891 z"
+         style="opacity:1;vector-effect:none;fill:#ff9900;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+         transform="matrix(0.26458333,0,0,0.26458333,0,85.333317)" />
+    </g>
+    <circle
+       style="opacity:1;vector-effect:none;fill:#365a66;fill-opacity:1;fill-rule:nonzero;stroke:#365a66;stroke-width:0.31019941;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+       id="path4575"
+       cx="132.29167"
+       cy="97.462929"
+       r="8.3612747"
+       inkscape:export-filename="/home/jkg/Documents/projects/game-jam-family/GGJ21/project/assets/frame.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       inkscape:connector-curvature="0"
+       id="rect821-5"
+       d="m 325.4057,268.47611 v 64.24657 h 135.57598 v -64.24657 z m 10.90784,3.97602 h 113.7603 c 2.07611,0 3.74751,0.98325 3.74751,2.20457 v 51.8854 c 0,1.22131 -1.6714,2.20457 -3.74751,2.20457 h -113.7603 c -2.07605,0 -3.74745,-0.98326 -3.74745,-2.20457 v -51.8854 c 0,-1.22132 1.6714,-2.20457 3.74745,-2.20457 z"
+       style="display:inline;opacity:1;vector-effect:none;fill:#ffd531;fill-opacity:0.88235295;fill-rule:nonzero;stroke:none;stroke-width:0.05049178;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke" />
   </g>
 </svg>
