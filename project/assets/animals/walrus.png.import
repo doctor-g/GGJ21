@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hippo.png-c65c91c7459f529904a1db275047b989.stex"
+path="res://.import/walrus.png-82319e6145aacbf6408e060192e082e4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animals/hippo.png"
-dest_files=[ "res://.import/hippo.png-c65c91c7459f529904a1db275047b989.stex" ]
+source_file="res://assets/animals/walrus.png"
+dest_files=[ "res://.import/walrus.png-82319e6145aacbf6408e060192e082e4.stex" ]
 
 [params]
 
