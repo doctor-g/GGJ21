@@ -24,6 +24,7 @@ func _on_OffScreen_body_entered(body):
 		$FallSound.play()
 		body.queue_free()
 		if GameState.lives > 0:
+			GameState.reset_chain()
 			_shooter.arm()
 			$TopWall.reset()
 		else:

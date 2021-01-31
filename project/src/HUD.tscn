@@ -1,18 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/frame.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/Tienne.tres" type="DynamicFont" id=3]
-[ext_resource path="res://assets/fonts/Tienne-Black.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://assets/fonts/Tienne-Regular.ttf" type="DynamicFontData" id=5]
-
-[sub_resource type="DynamicFont" id=1]
-size = 10
-font_data = ExtResource( 5 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 32
-font_data = ExtResource( 4 )
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
@@ -26,40 +16,12 @@ __meta__ = {
 texture = ExtResource( 2 )
 centered = false
 
-[node name="ChainHeader" type="Label" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 3.0
-margin_top = 20.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 1 )
-text = "Chain"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ChainLabel" type="Label" parent="."]
-margin_left = 489.946
-margin_top = 25.4712
-margin_right = 510.946
-margin_bottom = 69.4712
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 2 )
-text = "0"
-align = 1
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
 [node name="ScoreBox" type="HBoxContainer" parent="."]
-margin_left = 122.861
+margin_left = 25.4177
 margin_top = 8.98984
-margin_right = 231.861
+margin_right = 209.418
 margin_bottom = 48.9898
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -81,6 +43,36 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.113725, 0.113725, 0.113725, 1 )
 text = "00000"
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComboBox" type="HBoxContainer" parent="."]
+margin_left = 247.316
+margin_top = 10.179
+margin_right = 496.316
+margin_bottom = 50.179
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ComboBox"]
+margin_right = 122.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
+text = "Combo:"
+
+[node name="ChainLabel" type="Label" parent="ComboBox"]
+margin_left = 126.0
+margin_right = 249.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.113725, 0.113725, 0.113725, 1 )
+text = "1.0x"
 __meta__ = {
 "_edit_use_anchors_": false
 }

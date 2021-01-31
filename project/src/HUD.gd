@@ -2,7 +2,7 @@ extends Control
 
 onready var _score_label := $ScoreBox/ScoreLabel
 onready var _lives_label := $LivesBox/LivesLabel
-onready var _chain_label := $ChainLabel
+onready var _multiplier_label := $ComboBox/ChainLabel
 
 export var lerp_percent_per_frame := 0.3
 
@@ -15,7 +15,7 @@ func _ready():
 	GameState.connect("chain_changed", self, "_on_chain_changed")
 	_score_label.text = str(GameState.get_score())
 	_lives_label.text = str(GameState.lives)
-	_chain_label.text = str(GameState.get_chain())
+	_multiplier_label.text = _format_multiplier_text()
 
 
 func _physics_process(_delta):
@@ -31,5 +31,9 @@ func _on_lives_changed(lives:int)->void:
 	_lives_label.text = str(lives)
 
 
-func _on_chain_changed(chain:int)->void:
-	_chain_label.text = str(chain)
+func _on_chain_changed(_chain:int)->void:
+	_multiplier_label.text = _format_multiplier_text()
+
+
+func _format_multiplier_text()->String:
+	return "%0.1fx" % GameState.get_chain_multiplier()

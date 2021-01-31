@@ -65,9 +65,14 @@ func reset_chain()->void:
 	emit_signal("chain_changed", _chain)
 
 
+# Get the current score multiplier
+func get_chain_multiplier()->float:
+	return (1.0 + _chain * .1)
+
+
 # Add the given number of points, which will be scaled by the current multiplier.
 func add_points(points:int)->void:
-	_score += int(points * (1.0 + (_chain-1) * .1))
+	_score += int(points * get_chain_multiplier())
 	emit_signal("score_changed", _score)
 	
 	if _score > highscore:
