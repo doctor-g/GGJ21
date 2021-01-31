@@ -4,55 +4,55 @@
 [ext_resource path="res://src/EndGame.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 100, 10 )
+extents = Vector2( 83.3418, 10 )
 
 [node name="EndGame" type="Node2D"]
 position = Vector2( 0, 800 )
 script = ExtResource( 2 )
 
 [node name="EndGameBarrier" parent="." instance=ExtResource( 1 )]
-position = Vector2( 200, 0 )
+position = Vector2( 250, 0 )
 
 [node name="EndGameBarrier2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 400, 0 )
+position = Vector2( 420, 0 )
 
 [node name="EndGameBarrier3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 600, 0 )
+position = Vector2( 580, 0 )
 
 [node name="EndGameBarrier4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 800, 0 )
+position = Vector2( 750, 0 )
 
 [node name="FarLeftArea" type="Area2D" parent="."]
 position = Vector2( 0, 7.49158 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FarLeftArea"]
-position = Vector2( 100, 20 )
+position = Vector2( 168.379, 20.5946 )
 shape = SubResource( 1 )
 
 [node name="NearLeftArea" type="Area2D" parent="."]
 position = Vector2( 200, 7.49158 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NearLeftArea"]
-position = Vector2( 100, 20 )
+position = Vector2( 134.487, 20 )
 shape = SubResource( 1 )
 
 [node name="CenterArea" type="Area2D" parent="."]
 position = Vector2( 400, 7.49158 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CenterArea"]
-position = Vector2( 100, 20 )
+position = Vector2( 106.541, 20.5946 )
 shape = SubResource( 1 )
 
 [node name="NearRightArea" type="Area2D" parent="."]
 position = Vector2( 600, 7.49158 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NearRightArea"]
-position = Vector2( 100, 20 )
+position = Vector2( 67.2968, 20 )
 shape = SubResource( 1 )
 
 [node name="FarRightArea" type="Area2D" parent="."]
 position = Vector2( 800, 7.49158 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FarRightArea"]
-position = Vector2( 100, 20 )
+position = Vector2( 29.4445, 18.7401 )
 shape = SubResource( 1 )
