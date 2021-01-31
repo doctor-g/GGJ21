@@ -20,7 +20,7 @@ func _ready():
 
 func _physics_process(_delta):
 	_displayed_score = lerp(_displayed_score, _target_score, lerp_percent_per_frame)
-	_score_label.text = str(_displayed_score)
+	_score_label.text = str(int(_displayed_score))
 
 
 func _on_score_changed(score:int)->void:
