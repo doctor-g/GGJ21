@@ -22,4 +22,6 @@ zip: windows linux
 	cp -r build/linux/* build/zip/release/linux
 	cp LICENSE build/zip
 	echo "Windows and Linux binaries are provided. You can also [play online!](https://doctor-g.github.io/GGJ21)" >> build/zip/release/README.md
+	mkdir -p build/zip/press
+	cp raw_assets/promotional/*png build/zip/press
 	cd build/zip;	zip bounce.zip -r .
