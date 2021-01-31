@@ -3,6 +3,9 @@ extends Control
 export var icon_size := 100.0
 export var sprite_offset := Vector2(10,5)
 
+const BUTTON_FONT := preload("res://assets/fonts/qmark.tres")
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(0,AnimalSettings.ANIMALS.size()):
@@ -21,6 +24,7 @@ func _ready():
 		else:
 			button.disabled = true
 			button.text = "?"
+			button.add_font_override("font", BUTTON_FONT)
 		$AnimalGrid.add_child(button)
 		
 
