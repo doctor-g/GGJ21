@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/Tienne-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/fonts/Tienne-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://src/ConfirmationDialog.gd" type="Script" id=3]
+[ext_resource path="res://assets/SFX/button_clicked.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
@@ -80,5 +81,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "No"
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/YesButton" to="." method="_on_YesButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NoButton" to="." method="_on_NoButton_pressed"]
