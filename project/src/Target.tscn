@@ -4,8 +4,8 @@
 [ext_resource path="res://assets/paddle.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 9.08701
-height = 109.43
+radius = 10.0319
+height = 168.646
 
 [node name="Target" type="KinematicBody2D"]
 script = ExtResource( 1 )

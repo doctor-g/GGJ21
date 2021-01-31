@@ -35,7 +35,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1.5, 4.5, 6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 500, 765 ), Vector2( 90.4682, 765 ), Vector2( 913.512, 765 ), Vector2( 500, 765 ) ]
+"values": [ Vector2( 500, 765 ), Vector2( 115.953, 765 ), Vector2( 885.196, 765 ), Vector2( 500, 765 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -95,7 +95,7 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="Target" parent="." instance=ExtResource( 3 )]
-position = Vector2( 500, 765 )
+position = Vector2( 885.196, 765 )
 
 [node name="TargetAnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "TargetPingPong"
