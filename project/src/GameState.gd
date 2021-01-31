@@ -75,7 +75,6 @@ func add_points(points:int)->void:
 		config.set_value("save", "highscore", _score)
 	
 	if not new_unlock and _has_unlocked_next_animal():
-		print('UNLOCKED NEW THING')
 		new_unlock = true
 	
 
