@@ -6,8 +6,8 @@ onready var _multiplier_label := $ComboBox/ChainLabel
 
 export var lerp_percent_per_frame := 0.3
 
-var _target_score := 0
-var _displayed_score := 0
+onready var _target_score := GameState.get_score()
+onready var _displayed_score := GameState.get_score()
 
 func _ready():
 	GameState.connect("score_changed", self, "_on_score_changed")

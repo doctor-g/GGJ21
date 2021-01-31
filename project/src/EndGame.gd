@@ -19,7 +19,7 @@ func _ready():
 func _on_Area2D_entered(body, area, bin):
 	if body is Ball:
 		var bonus_points := _get_bin_value(bin)
-		GameState.add_points(bonus_points)
+		GameState.add_unmodified_points(bonus_points)
 		var popup := _ScoreBonusPopup.instance()
 		popup.text = "+%d" % bonus_points
 		popup.rect_position = Vector2(50, -100) # These magic numbers happened to work.

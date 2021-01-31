@@ -81,7 +81,17 @@ func get_chain_multiplier()->float:
 func add_points(points:int)->void:
 	_score += int(points * get_chain_multiplier())
 	emit_signal("score_changed", _score)
-	
+	_postprocess_score_change()
+
+
+# Add points that do not get multiplied
+func add_unmodified_points(points:int) -> void:
+	_score += points
+	emit_signal("score_changed", _score)
+	_postprocess_score_change()
+
+
+func _postprocess_score_change()->void:
 	if _score > highscore:
 		highscore = _score
 		config.set_value("save", "highscore", _score)
