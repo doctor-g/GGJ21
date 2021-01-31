@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Tienne.tres" type="DynamicFont" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/New Piskel (1).png" type="Texture" id=4]
 [ext_resource path="res://assets/animals/chick.png" type="Texture" id=5]
 [ext_resource path="res://assets/fonts/Tienne-Bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/SFX/button_clicked.wav" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
@@ -189,5 +190,8 @@ custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 0.819608, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "YOU FOUND..."
+
+[node name="ButtonClicked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 [connection signal="pressed" from="Background/VBoxContainer/ContinueButton" to="." method="_on_PlayAgainButton_pressed"]
 [connection signal="pressed" from="Unlocked/PopupButton2" to="." method="_on_PostUnlockButton_pressed"]

@@ -25,6 +25,8 @@ func show():
 
 
 func _on_PlayAgainButton_pressed():
+	$ButtonClicked.play()
+	yield(get_tree().create_timer(0.08), "timeout")
 	GameState.save_config() # This has to be done sometime, so do it now.
 	if GameState.new_unlock:
 		$Background.visible = false
@@ -37,4 +39,6 @@ func _on_PlayAgainButton_pressed():
 
 
 func _on_PostUnlockButton_pressed():
+	$ButtonClicked.play()
+	yield(get_tree().create_timer(0.08), "timeout")
 	get_tree().change_scene("res://src/MainMenuScreen.tscn")

@@ -33,6 +33,8 @@ func _ready():
 		
 
 func _on_Button_pressed(animal_index)->void:
+	$ButtonClicked.play()
+	yield(get_tree().create_timer(0.08), "timeout")
 	GameState.reset()
 	GameState.animal_index = animal_index
 	get_tree().change_scene("res://src/Level.tscn")
