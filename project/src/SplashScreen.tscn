@@ -1,6 +1,40 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/SplashScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/Tienne-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/gamejam_poster.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Intro"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("gamejam_poster:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 0.258816, 0.258816 ),
+"update": 0,
+"values": [ Vector2( 497.834, 1195.17 ), Vector2( 497.834, 362.107 ) ]
+}
 
 [node name="SplashScreen" type="Control"]
 anchor_right = 1.0
@@ -10,9 +44,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0588235, 0.0588235, 0.054902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gamejam_poster" type="Sprite" parent="."]
+position = Vector2( 497.834, 1195.17 )
+texture = ExtResource( 3 )
+
 [node name="Label" type="Label" parent="."]
-margin_left = 439.768
-margin_top = 388.881
-margin_right = 588.768
-margin_bottom = 402.881
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -175.5
+margin_top = -66.3163
+margin_right = 175.5
+margin_bottom = -28.3163
+custom_fonts/font = SubResource( 1 )
 text = "Tap or click to continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Intro"
+anims/Intro = SubResource( 2 )
