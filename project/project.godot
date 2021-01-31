@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
-"class": "AnimalSettings",
-"language": "GDScript",
-"path": "res://src/AnimalSettings.gd"
-}, {
 "base": "RigidBody2D",
 "class": "Ball",
 "language": "GDScript",
@@ -25,7 +20,6 @@ _global_script_classes=[ {
 "path": "res://src/Peg.gd"
 } ]
 _global_script_class_icons={
-"AnimalSettings": "",
 "Ball": "",
 "Peg": ""
 }
@@ -39,6 +33,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GameState="*res://src/GameState.gd"
+AnimalSettings="*res://src/AnimalSettings.gd"
 
 [debug]
 

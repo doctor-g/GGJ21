@@ -1,5 +1,7 @@
 extends Control
 
+export var icon_size := 100.0
+export var sprite_offset := Vector2(10,5)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,8 +14,9 @@ func _ready():
 			var sprite := Sprite.new()
 			sprite.centered = false
 			sprite.texture = AnimalSettings.ANIMALS[i].image
-			var linear_scale := 100.0 / sprite.texture.get_width()
+			var linear_scale := icon_size / sprite.texture.get_width()
 			sprite.scale = Vector2(linear_scale, linear_scale)
+			sprite.position = sprite_offset
 			button.add_child(sprite)
 		else:
 			button.disabled = true
