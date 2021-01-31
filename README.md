@@ -1,4 +1,8 @@
-# Global Game Jam 2021
+# Gather 'Round
+
+A [Global Game Jam Game](https://globalgamejam.org) made by Paul, Alex, and Jessica.
+
+[Play online now](https://doctor-g.github.io/GGJ21/) or [Go to our GGJ 2021 page](https://globalgamejam.org/2021/games/farm-6).
 
 ## Third-Party Assets
 
