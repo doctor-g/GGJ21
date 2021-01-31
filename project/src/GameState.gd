@@ -35,13 +35,7 @@ func reset():
 
 func _get_lives()->int:
 	if unlock_level < 3:
-		return 6
-	elif unlock_level > 2 and unlock_level < 6:
-		return 8
-	elif unlock_level > 5 and unlock_level < 9:
 		return 10
-	elif unlock_level > 8 and unlock_level < 12:
-		return 12
 	else:
 		return 14
 
@@ -110,3 +104,6 @@ func get_score()->int:
 func _set_lives(value):
 	lives = value
 	emit_signal("lives_changed", lives)
+
+func reset_lives():
+	lives = _get_lives()

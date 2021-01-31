@@ -68,4 +68,5 @@ func _on_Peg_destroyed():
 
 func _on_LevelClear_dismissed():
 	GameState.reset_chain()
+	GameState.reset_lives()
 	get_tree().change_scene("res://src/Level.tscn")
