@@ -14,23 +14,23 @@ var _mouse_pos : Vector2
 
 # Call to prepare this thing for launch
 func arm():
+	call_deferred("_load")
+
+
+func _load()->void:
+	_ball = _Ball.instance()
+	_ball.mode = RigidBody2D.MODE_STATIC
+	_ball.position = get_global_transform().origin
+	get_parent().add_child(_ball)
 	_state = _State.READY
 
 
 func _input(event:InputEvent):
 	if event is InputEventMouseButton:
 		if event.pressed and _state == _State.READY:
-			_load_ball()
+			_state = _State.AIMING
 		elif not event.pressed and _state == _State.AIMING:
 			_shoot_ball()
-
-
-func _load_ball():
-	_state = _State.AIMING
-	_ball = _Ball.instance()
-	_ball.mode = RigidBody2D.MODE_STATIC
-	_ball.position = get_global_transform().origin
-	get_parent().add_child(_ball)
 
 
 func _process(_delta):
