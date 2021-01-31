@@ -26,8 +26,6 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="ScoreBox"]
-anchor_left = 0.00543477
-anchor_right = 0.00543477
 margin_right = 90.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
@@ -51,18 +49,14 @@ __meta__ = {
 
 [node name="ComboBox" type="HBoxContainer" parent="."]
 margin_left = 247.316
-margin_top = 7.179
+margin_top = 1.0
 margin_right = 496.316
-margin_bottom = 47.179
+margin_bottom = 45.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="ComboBox"]
-anchor_left = 0.0401606
-anchor_top = -0.0909091
-anchor_right = 0.0401606
-anchor_bottom = -0.0909091
 margin_right = 122.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
@@ -71,10 +65,6 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Combo"
 
 [node name="ChainLabel" type="Label" parent="ComboBox"]
-anchor_left = -0.0200803
-anchor_top = -0.0909091
-anchor_right = -0.0200803
-anchor_bottom = -0.0909091
 margin_left = 126.0
 margin_right = 249.0
 margin_bottom = 44.0
@@ -88,20 +78,14 @@ __meta__ = {
 }
 
 [node name="LivesBox" type="HBoxContainer" parent="."]
-margin_left = 654.76
-margin_top = 8.98984
-margin_right = 838.76
-margin_bottom = 48.9898
+margin_left = 623.76
+margin_right = 807.76
+margin_bottom = 44.0
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="LivesBox"]
-anchor_left = -0.152174
-anchor_top = -0.159091
-anchor_right = -0.152174
-anchor_bottom = -0.159091
 margin_right = 110.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
@@ -110,10 +94,6 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Animals"
 
 [node name="LivesLabel" type="Label" parent="LivesBox"]
-anchor_left = -0.190217
-anchor_top = -0.159091
-anchor_right = -0.190217
-anchor_bottom = -0.159091
 margin_left = 114.0
 margin_right = 184.0
 margin_bottom = 44.0
