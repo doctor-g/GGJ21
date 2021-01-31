@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jungle_background.png-11e9e7c954399332d3e0293e09def352.stex"
+path="res://.import/farm_background.png-00e6ac09b2b98ad85156283d3e5182d4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jungle_background.png"
-dest_files=[ "res://.import/jungle_background.png-11e9e7c954399332d3e0293e09def352.stex" ]
+source_file="res://assets/backgrounds/farm_background.png"
+dest_files=[ "res://.import/farm_background.png-00e6ac09b2b98ad85156283d3e5182d4.stex" ]
 
 [params]
 

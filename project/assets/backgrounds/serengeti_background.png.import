@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/forest_background.png-7bb174764245f1468c16b0544c64ed12.stex"
+path="res://.import/serengeti_background.png-0b972e71b27563e896bf8e4dfb099f3e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/forest_background.png"
-dest_files=[ "res://.import/forest_background.png-7bb174764245f1468c16b0544c64ed12.stex" ]
+source_file="res://assets/backgrounds/serengeti_background.png"
+dest_files=[ "res://.import/serengeti_background.png-0b972e71b27563e896bf8e4dfb099f3e.stex" ]
 
 [params]
 

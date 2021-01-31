@@ -12,6 +12,7 @@ onready var _level_clear := $LevelClear
 
 func _ready():
 	_shooter.arm()
+	$Background.texture = AnimalSettings.ANIMALS[GameState.animal_index].background
 
 
 func _on_EndGame(_bin):

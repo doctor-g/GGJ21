@@ -1,26 +1,26 @@
 extends Node
 
-const _ANIMAL_SEQUENCE = [
-	"chick",
-	"goat",
-	"bear",
-	"buffalo",
-	"dog",
-	"duck",
-	"elephant",
-	"gorilla",
-	"hippo",
-	"horse",
-	"monkey",
-	"moose",
-	"narwhal",
-	"panda",
-	"pig",
-	"rabbit",
-	"snake",
-	"zebra",
-	"penguin",
-	"rhino"
+const _ANIMAL_BG_SEQUENCE = [
+	"chick", "farm",
+	"goat", "farm",
+	"bear", "forest",
+	"buffalo", "serengeti",
+	"dog", "farm",
+	"duck", "water",
+	"elephant", "serengeti",
+	"gorilla", "jungle",
+	"hippo", "water",
+	"horse", "farm",
+	"monkey", "jungle",
+	"moose", "forest",
+	"narwhal", "water",
+	"panda", "jungle",
+	"pig", "farm",
+	"rabbit", "forest",
+	"snake", "jungle",
+	"zebra", "serengeti",
+	"penguin", "water",
+	"rhino", "serengeti"
 ]
 
 var ANIMALS = _make_animals_conf()
@@ -28,10 +28,13 @@ var ANIMALS = _make_animals_conf()
 func _make_animals_conf()->Array:
 	var result = []
 	var count = 0
-	for animal in _ANIMAL_SEQUENCE:
+	for i in range(0, _ANIMAL_BG_SEQUENCE.size(), 2):
+		var animal : String = _ANIMAL_BG_SEQUENCE[i]
+		var background : String = _ANIMAL_BG_SEQUENCE[i+1]
 		result.append({
 			"image": _asset(animal),
-			"score": 200 * count
+			"score": 200 * count,
+			"background": _background(background)
 		})
 		count += 1
 	return result
@@ -39,3 +42,7 @@ func _make_animals_conf()->Array:
 
 func _asset(name):
 	return load("res://assets/animals/%s.png" % name)
+
+
+func _background(name):
+	return load("res://assets/backgrounds/%s_background.png" % name)

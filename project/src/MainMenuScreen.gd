@@ -21,7 +21,7 @@ func _ready():
 			var sprite := Sprite.new()
 			sprite.centered = false
 			sprite.texture = AnimalSettings.ANIMALS[i].image
-			var linear_scale := icon_size / sprite.texture.get_width()
+			var linear_scale := icon_size / max(sprite.texture.get_width(), sprite.texture.get_height())
 			sprite.scale = Vector2(linear_scale, linear_scale)
 			sprite.position = sprite_offset
 			button.add_child(sprite)
