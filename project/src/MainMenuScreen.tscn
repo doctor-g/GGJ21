@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/MainMenuScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Tienne-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/SFX/button_clicked.wav" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -71,6 +72,9 @@ margin_right = 536.492
 margin_bottom = 784.645
 custom_fonts/font = SubResource( 2 )
 text = "Reset All"
+
+[node name="ButtonClicked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_FullscreenButton_toggled"]
 [connection signal="toggled" from="MuteMusicButton" to="." method="_on_MuteMusicButton_toggled"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
