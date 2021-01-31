@@ -13,5 +13,7 @@ A [Global Game Jam Game](https://globalgamejam.org) made by Paul, Alex, and Jess
 
 - [Potta One Font](https://fonts.google.com/specimen/Potta+One) licensed under OFL.
 
+- [Yusei Magic Font](https://fonts.google.com/specimen/Yusei+Magic) licensed under OFL.
+
 - [Slide Whistle](https://freesound.org/people/sheepfilms/sounds/202753/) by sheepfilms,
   licensed under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
