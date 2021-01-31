@@ -51,7 +51,7 @@ func hit():
 	if health <= 0:
 		$CollisionShape2D.set_deferred("disabled", true)
 		GameState.add_points(points_for_destroy)
-		GameState.increase_chain()		
+		GameState.increase_chain()
 		
 		_tween.interpolate_property(_colored_part, "modulate", null, Color.white, 0.05)
 		_tween.start()
