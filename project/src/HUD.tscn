@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/frame.png" type="Texture" id=2]
-[ext_resource path="res://assets/fonts/Tienne.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/fonts/Magic.tres" type="DynamicFont" id=3]
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
@@ -18,25 +18,27 @@ centered = false
 
 [node name="ScoreBox" type="HBoxContainer" parent="."]
 margin_left = 25.4177
-margin_top = 8.98984
+margin_top = 1.98984
 margin_right = 209.418
-margin_bottom = 48.9898
+margin_bottom = 45.9898
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="ScoreBox"]
-margin_right = 95.0
-margin_bottom = 38.0
+anchor_left = 0.00543477
+anchor_right = 0.00543477
+margin_right = 90.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
-text = "Score: "
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Score"
 
 [node name="ScoreLabel" type="Label" parent="ScoreBox"]
-margin_left = 99.0
+margin_left = 94.0
 margin_right = 184.0
-margin_bottom = 38.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -49,25 +51,33 @@ __meta__ = {
 
 [node name="ComboBox" type="HBoxContainer" parent="."]
 margin_left = 247.316
-margin_top = 10.179
+margin_top = 7.179
 margin_right = 496.316
-margin_bottom = 50.179
+margin_bottom = 47.179
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="ComboBox"]
+anchor_left = 0.0401606
+anchor_top = -0.0909091
+anchor_right = 0.0401606
+anchor_bottom = -0.0909091
 margin_right = 122.0
-margin_bottom = 38.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
-text = "Combo:"
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Combo"
 
 [node name="ChainLabel" type="Label" parent="ComboBox"]
+anchor_left = -0.0200803
+anchor_top = -0.0909091
+anchor_right = -0.0200803
+anchor_bottom = -0.0909091
 margin_left = 126.0
 margin_right = 249.0
-margin_bottom = 38.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -88,17 +98,25 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="LivesBox"]
-margin_right = 125.0
-margin_bottom = 38.0
+anchor_left = -0.152174
+anchor_top = -0.159091
+anchor_right = -0.152174
+anchor_bottom = -0.159091
+margin_right = 110.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
-text = "Animals:"
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Animals"
 
 [node name="LivesLabel" type="Label" parent="LivesBox"]
-margin_left = 129.0
+anchor_left = -0.190217
+anchor_top = -0.159091
+anchor_right = -0.190217
+anchor_bottom = -0.159091
+margin_left = 114.0
 margin_right = 184.0
-margin_bottom = 38.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
