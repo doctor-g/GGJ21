@@ -14,6 +14,7 @@ onready var _colored_part := $PegBackground
 onready var _tween := $Tween
 
 var _health_colors := [Color.blue, Color.red, Color(0.2,0.2,0.2)]
+var base_position:Position2D
 
 
 func _ready():
@@ -22,6 +23,10 @@ func _ready():
 
 func _update_color():
 	_colored_part.modulate = _health_colors[health-1]
+
+
+func _process(_delta):
+	position = base_position.get_global_transform().origin
 
 
 func _set_health(value):
