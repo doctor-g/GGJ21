@@ -12,66 +12,61 @@ var positions := []
 var _dense_peg_patterns  := [
 	preload("res://src/PegPatterns/Circle.tscn"),
 	preload("res://src/PegPatterns/Square.tscn"),
+	preload("res://src/PegPatterns/RotatingSquare.tscn"),
 	preload("res://src/PegPatterns/RotatedSquare.tscn"),
-	preload("res://src/PegPatterns/Wave.tscn"),
 	preload("res://src/PegPatterns/RotatingCircle.tscn"),
+	preload("res://src/PegPatterns/DenseCircle.tscn"),
+	preload("res://src/PegPatterns/RotatingDenseCircle.tscn"),
+	preload("res://src/PegPatterns/RotatingCircle.tscn"),
+	preload("res://src/PegPatterns/DenseWave.tscn"),
 ]
 var _light_peg_patterns := [
 	preload("res://src/PegPatterns/HollowSquare.tscn"),
+	preload("res://src/PegPatterns/RotatingHollowSquare.tscn"),
 	preload("res://src/PegPatterns/HollowCircle.tscn"),
 	preload("res://src/PegPatterns/RotatingHollowCircle.tscn"),
 	preload("res://src/PegPatterns/Pyramid.tscn"),
 	preload("res://src/PegPatterns/ReversePyramid.tscn"),
+	preload("res://src/PegPatterns/Wave.tscn"),
+	preload("res://src/PegPatterns/Rhombus.tscn"),
 ]
 var _peg_patterns := []
 
 
-func _ready():
+func _ready()->void:
 	randomize()
 	_get_pattern_level()
-	upgraded_pegs = _peg_level()
+	_set_peg_level()
 	_generate_pegs()
 
 
-func _get_pattern_level():
+func _get_pattern_level()->void:
 	var unlock_level := GameState.unlock_level
-	var level := 3
 	if unlock_level < 3:
 		add_patterns(_light_peg_patterns)
+		#max_patterns = 4
 	elif unlock_level > 2 and unlock_level < 5:
 		add_patterns(_light_peg_patterns)
 		add_patterns(_dense_peg_patterns)
 	else:
 		add_patterns(_dense_peg_patterns)
+#	if unlock_level > 2 and unlock_level < 4:
+#		max_patterns = 5
 
 
-func add_patterns(patterns:Array):
+func add_patterns(patterns:Array)->void:
 	for pattern in patterns:
 		_peg_patterns.append(pattern)
 
 
-func _peg_level()->int:
+func _set_peg_level()->void:
 	var unlock_level := GameState.unlock_level
-	var level := 5
-	if unlock_level > 2:
-		level = 5
-		max_peg_health = 2
-	elif 1 < unlock_level and unlock_level < 4:
-		level = 7
+	upgraded_pegs = unlock_level + 5
+	if unlock_level > 3:
 		max_peg_health = 3
-	elif 4 < unlock_level and unlock_level < 7:
-		level = 9
-		max_peg_health = 3
-	else:
-		level = unlock_level+3
-		max_peg_health = 3
-	#level = unlock_level + 5
-	#if unlock_level > 3:
-	#	max_peg_health = 3
-	return level
 
 
-func _generate_pegs():
+func _generate_pegs()->void:
 	for _i in range(0,max_patterns):
 		var pattern_index = randi()%_peg_patterns.size()
 		var Pattern = _peg_patterns[pattern_index]

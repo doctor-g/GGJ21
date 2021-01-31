@@ -1,0 +1,29 @@
+[gd_scene format=2]
+
+[node name="DenseCirclePattern" type="Node2D"]
+
+[node name="Center" type="Position2D" parent="."]
+
+[node name="Pos1" type="Position2D" parent="."]
+position = Vector2( -80, 0 )
+
+[node name="Pos2" type="Position2D" parent="."]
+position = Vector2( -60, -60 )
+
+[node name="Pos3" type="Position2D" parent="."]
+position = Vector2( 0, -80 )
+
+[node name="Pos4" type="Position2D" parent="."]
+position = Vector2( 60, -60 )
+
+[node name="Pos5" type="Position2D" parent="."]
+position = Vector2( 80, 0 )
+
+[node name="Pos6" type="Position2D" parent="."]
+position = Vector2( 60, 60 )
+
+[node name="Pos7" type="Position2D" parent="."]
+position = Vector2( 0, 80 )
+
+[node name="Pos8" type="Position2D" parent="."]
+position = Vector2( -60, 60 )

@@ -1,6 +1,10 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/PegPatterns/Pattern.gd" type="Script" id=1]
 
 [node name="Square" type="Node2D"]
+script = ExtResource( 1 )
+_rotating = true
 
 [node name="Position2D8" type="Position2D" parent="."]
 position = Vector2( 0, -80 )
