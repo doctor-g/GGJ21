@@ -9,7 +9,6 @@ export var upgraded_pegs := 5
 export var max_peg_health := 2
 
 var positions := []
-
 var _peg_patterns  := [
 	preload("res://src/PegPatterns/Circle.tscn"),
 	preload("res://src/PegPatterns/Square.tscn"),
@@ -23,7 +22,41 @@ var _peg_patterns  := [
 
 func _ready():
 	randomize()
+	max_patterns = _pattern_level()
+	upgraded_pegs = _peg_level()
 	_generate_pegs()
+
+
+func _pattern_level()->int:
+	var unlock_level := GameState.unlock_level
+	var level := 3
+	if unlock_level < 3:
+		level = 3
+	elif 2 < unlock_level and unlock_level < 5:
+		level = 4
+	elif 5 < unlock_level and unlock_level < 8:
+		level = 5
+	else:
+		level = 6
+	return level
+
+
+func _peg_level()->int:
+	var unlock_level := GameState.unlock_level
+	var level := 5
+	if unlock_level > 2:
+		level = 5
+		max_peg_health = 2
+	elif 1 < unlock_level and unlock_level < 4:
+		level = 7
+		max_peg_health = 3
+	elif 4 < unlock_level and unlock_level < 7:
+		level = 9
+		max_peg_health = 3
+	else:
+		level = unlock_level+3
+		max_peg_health = 3
+	return level
 
 
 func _generate_pegs():
