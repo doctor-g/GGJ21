@@ -2,7 +2,8 @@
 
 A [Global Game Jam Game](https://globalgamejam.org) made by Paul, Alex, and Jessica.
 
-[Play online now](https://doctor-g.github.io/GGJ21/) or [Go to our GGJ 2021 page](https://globalgamejam.org/2021/games/farm-6).
+[Play online now](https://doctor-g.github.io/GGJ21/) or [Go to our GGJ 2021 page](https://globalgamejam.org/2021/games/farm-6)
+to download Linux or Windows binaries.
 
 ## Third-Party Assets
 
