@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Tienne.tres" type="DynamicFont" id=2]
@@ -13,8 +13,12 @@ size = 28
 outline_size = 1
 font_data = ExtResource( 3 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "Wave"
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 1
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=3]
 length = 2.0
 loop = true
 tracks/0/type = "bezier"
@@ -48,7 +52,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5, 2 )
 }
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 26
 outline_size = 1
 font_data = ExtResource( 6 )
@@ -99,19 +103,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -89.0
-margin_top = -85.0
-margin_right = 89.0
-margin_bottom = 85.0
+margin_left = -147.5
+margin_top = -100.0
+margin_right = 147.5
+margin_bottom = 100.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="Background/VBoxContainer"]
-margin_right = 178.0
-margin_bottom = 38.0
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_right = 295.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 1, 0.882353, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Game Over!"
 __meta__ = {
 "_edit_lock_": true,
@@ -119,9 +124,9 @@ __meta__ = {
 }
 
 [node name="HighScore" type="Label" parent="Background/VBoxContainer"]
-margin_top = 42.0
-margin_right = 178.0
-margin_bottom = 80.0
+margin_top = 72.0
+margin_right = 295.0
+margin_bottom = 110.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "[HighScore]"
@@ -132,9 +137,9 @@ __meta__ = {
 }
 
 [node name="YourScore" type="Label" parent="Background/VBoxContainer"]
-margin_top = 84.0
-margin_right = 178.0
-margin_bottom = 122.0
+margin_top = 114.0
+margin_right = 295.0
+margin_bottom = 152.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "[Score]"
@@ -145,9 +150,9 @@ __meta__ = {
 }
 
 [node name="ContinueButton" type="Button" parent="Background/VBoxContainer"]
-margin_top = 126.0
-margin_right = 178.0
-margin_bottom = 170.0
+margin_top = 156.0
+margin_right = 295.0
+margin_bottom = 200.0
 custom_fonts/font = ExtResource( 2 )
 text = "Main Menu"
 __meta__ = {
@@ -179,14 +184,14 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Unlocked"]
-anims/Wave = SubResource( 2 )
+anims/Wave = SubResource( 3 )
 
 [node name="Label" type="Label" parent="Unlocked"]
 margin_left = 409.796
 margin_top = 100.113
 margin_right = 604.796
 margin_bottom = 136.113
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0.819608, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "YOU FOUND..."
