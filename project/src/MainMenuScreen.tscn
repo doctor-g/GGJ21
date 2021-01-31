@@ -1,14 +1,26 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/MainMenuScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Tienne-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/music/menu.ogg" type="AudioStream" id=3]
 [ext_resource path="res://assets/SFX/button_clicked.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/backgrounds/farm_background.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/PottaOne-Regular.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 2 )
+size = 48
+outline_size = 4
+outline_color = Color( 0.866667, 0.0980392, 0.0980392, 1 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 19
 font_data = ExtResource( 2 )
 
 [node name="MainMenuScreen" type="Control"]
@@ -19,12 +31,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 441.235
-margin_top = 121.966
-margin_right = 568.235
-margin_bottom = 135.966
-text = "GAME TITLE IS HERE"
+[node name="farm_background" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -188.5
+margin_top = 71.9187
+margin_right = 188.5
+margin_bottom = 141.919
+custom_fonts/font = SubResource( 1 )
+text = "Gather 'Round"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimalGrid" type="GridContainer" parent="."]
 margin_left = 184.0
@@ -45,7 +71,7 @@ margin_left = -90.0
 margin_top = -135.892
 margin_right = 90.0
 margin_bottom = -95.8917
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Fullscreen"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -60,7 +86,7 @@ margin_left = -90.0
 margin_top = -95.4374
 margin_right = 90.0
 margin_bottom = -55.4374
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Mute Music"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -71,8 +97,21 @@ margin_left = 449.492
 margin_top = 756.645
 margin_right = 536.492
 margin_bottom = 784.645
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Reset All"
+
+[node name="Credits" type="Label" parent="."]
+margin_left = 678.585
+margin_top = 729.675
+margin_right = 991.585
+margin_bottom = 808.675
+custom_fonts/font = SubResource( 4 )
+text = "A Global Game Jam Game
+by Paul, Alex, and Jessica"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
