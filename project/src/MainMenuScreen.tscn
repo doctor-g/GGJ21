@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/MainMenuScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Tienne-Bold.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,30 @@
 [ext_resource path="res://assets/backgrounds/farm_background.png" type="Texture" id=5]
 [ext_resource path="res://assets/fonts/PottaOne-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/fonts/unlock_memo.tres" type="DynamicFont" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.713726, 0.772549, 0, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 1, 0.380392, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 1, 1, 0, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.721569, 0.423529, 0, 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -17,10 +41,10 @@ font_data = ExtResource( 6 )
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=7]
 size = 19
 font_data = ExtResource( 2 )
 
@@ -31,6 +55,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+_pressed = SubResource( 8 )
+_hover = SubResource( 9 )
+_normal = SubResource( 10 )
+_disabled = SubResource( 11 )
 
 [node name="farm_background" type="Sprite" parent="."]
 texture = ExtResource( 5 )
@@ -98,15 +126,18 @@ margin_left = 449.492
 margin_top = 756.645
 margin_right = 536.492
 margin_bottom = 784.645
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 6 )
 text = "Reset All"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Credits" type="Label" parent="."]
 margin_left = 678.585
 margin_top = 729.675
 margin_right = 991.585
 margin_bottom = 808.675
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 7 )
 text = "A Global Game Jam Game
 by Paul, Alex, and Jessica"
 align = 2
@@ -126,6 +157,9 @@ stream = ExtResource( 4 )
 margin_right = 40.0
 margin_bottom = 14.0
 custom_fonts/font = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_FullscreenButton_toggled"]
 [connection signal="toggled" from="MuteMusicButton" to="." method="_on_MuteMusicButton_toggled"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]

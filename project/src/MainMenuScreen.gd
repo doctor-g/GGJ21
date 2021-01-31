@@ -1,5 +1,9 @@
 extends Control
 
+export var _pressed:StyleBoxFlat = StyleBoxFlat.new()
+export var _hover:StyleBoxFlat = StyleBoxFlat.new()
+export var _normal:StyleBoxFlat = StyleBoxFlat.new()
+export var _disabled:StyleBoxFlat = StyleBoxFlat.new()
 export var icon_size := 100.0
 export var sprite_offset := Vector2(10,5)
 
@@ -16,6 +20,10 @@ func _ready():
 	
 	for i in range(0,AnimalSettings.ANIMALS.size()):
 		var button := Button.new()
+		button.set("custom_styles/hover", _hover)
+		button.set("custom_styles/pressed", _pressed)
+		button.set("custom_styles/normal", _normal)
+		button.set("custom_styles/disabled", _disabled)
 		button.connect("pressed", self, "_on_Button_pressed", [i])
 		button.size_flags_horizontal = SIZE_EXPAND_FILL
 		button.size_flags_vertical = SIZE_EXPAND_FILL
