@@ -30,6 +30,10 @@ config/name="GGJ21"
 run/main_scene="res://src/SplashScreen.tscn"
 config/icon="res://icon.png"
 
+[audio]
+
+output_latency.web=15
+
 [autoload]
 
 GameState="*res://src/GameState.gd"
