@@ -68,7 +68,7 @@ margin_right = 95.0
 margin_bottom = 38.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
 text = "Score: "
 
 [node name="ScoreLabel" type="Label" parent="ScoreBox"]
@@ -77,7 +77,8 @@ margin_right = 184.0
 margin_bottom = 38.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.113725, 0.113725, 0.113725, 1 )
 text = "00000"
 align = 2
 __meta__ = {
@@ -95,20 +96,21 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="LivesBox"]
-margin_right = 90.0
+margin_right = 125.0
 margin_bottom = 38.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Balls: "
+custom_colors/font_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
+text = "Animals:"
 
 [node name="LivesLabel" type="Label" parent="LivesBox"]
-margin_left = 94.0
+margin_left = 129.0
 margin_right = 184.0
 margin_bottom = 38.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.113725, 0.113725, 0.113725, 1 )
 text = "00"
 align = 2
 __meta__ = {
