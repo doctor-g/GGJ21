@@ -56,6 +56,9 @@ func _peg_level()->int:
 	else:
 		level = unlock_level+3
 		max_peg_health = 3
+	#level = unlock_level + 5
+	#if unlock_level > 3:
+	#	max_peg_health = 3
 	return level
 
 
