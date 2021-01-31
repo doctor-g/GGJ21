@@ -4,6 +4,7 @@ export var icon_size := 100.0
 export var sprite_offset := Vector2(10,5)
 
 const BUTTON_FONT := preload("res://assets/fonts/qmark.tres")
+const UNLOCK_FONT := preload("res://assets/fonts/unlock_memo.tres")
 const _ConfirmationDialog := preload("res://src/ConfirmationDialog.tscn")
 
 var _music_bus_index := AudioServer.get_bus_index("Music")
@@ -30,6 +31,13 @@ func _ready():
 			button.disabled = true
 			button.text = "?"
 			button.add_font_override("font", BUTTON_FONT)
+			if GameState.unlock_level + 1 == i:
+				var label := Label.new()
+				label.align = HALIGN_CENTER
+				label.text = '%d to unlock!' % AnimalSettings.ANIMALS[i].score
+				label.rect_position = Vector2(18,80) # It works, the magic number.
+				label.add_font_override("font", UNLOCK_FONT)
+				button.add_child(label)
 		$AnimalGrid.add_child(button)
 		
 

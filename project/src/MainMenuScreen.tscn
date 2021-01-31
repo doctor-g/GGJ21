@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/MainMenuScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Tienne-Bold.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/SFX/button_clicked.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/backgrounds/farm_background.png" type="Texture" id=5]
 [ext_resource path="res://assets/fonts/PottaOne-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/fonts/unlock_memo.tres" type="DynamicFont" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -120,6 +121,11 @@ bus = "Music"
 
 [node name="ButtonClicked" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 7 )
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_FullscreenButton_toggled"]
 [connection signal="toggled" from="MuteMusicButton" to="." method="_on_MuteMusicButton_toggled"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
